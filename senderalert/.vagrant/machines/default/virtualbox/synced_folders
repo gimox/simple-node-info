@@ -1,0 +1,1 @@
+{"virtualbox":{"vagrant-root":{"id":"vagrant-root","owner":"vagrant","group":"www-data","mount_options":["dmode=775,fmode=664"],"guestpath":"/var/www/html","hostpath":"/Users/giorgiomodoni/Development/senderalert/html","disabled":false},"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/giorgiomodoni/Development/senderalert","disabled":false}}}
