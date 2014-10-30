@@ -24,6 +24,7 @@
       <excludeFolder url="file://$MODULE_DIR$/html/app/vendor/bower-asset/punycode" />
       <excludeFolder url="file://$MODULE_DIR$/html/app/vendor/bower-asset/typeahead.js" />
       <excludeFolder url="file://$MODULE_DIR$/html/app/vendor/bower-asset/yii2-pjax" />
+      <excludeFolder url="file://$MODULE_DIR$/html/app/vendor/bower/bootbox" />
       <excludeFolder url="file://$MODULE_DIR$/html/app/vendor/bower/bootstrap" />
       <excludeFolder url="file://$MODULE_DIR$/html/app/vendor/bower/jquery" />
       <excludeFolder url="file://$MODULE_DIR$/html/app/vendor/bower/jquery-ui" />
@@ -32,13 +33,15 @@
       <excludeFolder url="file://$MODULE_DIR$/html/app/vendor/bower/punycode" />
       <excludeFolder url="file://$MODULE_DIR$/html/app/vendor/bower/typeahead.js" />
       <excludeFolder url="file://$MODULE_DIR$/html/app/vendor/bower/yii2-pjax" />
+      <excludeFolder url="file://$MODULE_DIR$/html/app/vendor/cebe/js-search" />
       <excludeFolder url="file://$MODULE_DIR$/html/app/vendor/cebe/markdown" />
+      <excludeFolder url="file://$MODULE_DIR$/html/app/vendor/cebe/markdown-latex" />
       <excludeFolder url="file://$MODULE_DIR$/html/app/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/html/app/vendor/dompdf/dompdf" />
       <excludeFolder url="file://$MODULE_DIR$/html/app/vendor/ezyang/htmlpurifier" />
       <excludeFolder url="file://$MODULE_DIR$/html/app/vendor/fortawesome/font-awesome" />
-      <excludeFolder url="file://$MODULE_DIR$/html/app/vendor/gimox/bootbox" />
       <excludeFolder url="file://$MODULE_DIR$/html/app/vendor/gimox/iscroll" />
+      <excludeFolder url="file://$MODULE_DIR$/html/app/vendor/mikevanriel/text-to-latex" />
       <excludeFolder url="file://$MODULE_DIR$/html/app/vendor/nikic/php-parser" />
       <excludeFolder url="file://$MODULE_DIR$/html/app/vendor/phenx/php-font-lib" />
       <excludeFolder url="file://$MODULE_DIR$/html/app/vendor/phpdocumentor/reflection" />
@@ -82,6 +85,7 @@
           <root url="file://$MODULE_DIR$/html/app/vendor/yiisoft/yii2" />
           <root url="file://$MODULE_DIR$/html/app/vendor/phpdocumentor/reflection-docblock" />
           <root url="file://$MODULE_DIR$/html/app/vendor/bower/jquery.inputmask" />
+          <root url="file://$MODULE_DIR$/html/app/vendor/bower/bootbox" />
           <root url="file://$MODULE_DIR$/html/app/vendor/bower-asset/jquery-ui" />
           <root url="file://$MODULE_DIR$/html/app/vendor/fortawesome/font-awesome" />
           <root url="file://$MODULE_DIR$/html/app/vendor/yiisoft/yii2-composer" />
@@ -89,6 +93,7 @@
           <root url="file://$MODULE_DIR$/html/app/vendor/yiisoft/yii2-gii" />
           <root url="file://$MODULE_DIR$/html/app/vendor/bower-asset/typeahead.js" />
           <root url="file://$MODULE_DIR$/html/app/vendor/yiisoft/yii2-apidoc" />
+          <root url="file://$MODULE_DIR$/html/app/vendor/mikevanriel/text-to-latex" />
           <root url="file://$MODULE_DIR$/html/app/vendor/2amigos/yii2-selectize-widget" />
           <root url="file://$MODULE_DIR$/html/app/vendor/phpspec/php-diff" />
           <root url="file://$MODULE_DIR$/html/app/vendor/bower-asset/punycode" />
@@ -104,8 +109,10 @@
           <root url="file://$MODULE_DIR$/html/app/vendor/yiisoft/yii2-swiftmailer" />
           <root url="file://$MODULE_DIR$/html/app/vendor/yiisoft/yii2-debug" />
           <root url="file://$MODULE_DIR$/html/app/vendor/bower/typeahead.js" />
+          <root url="file://$MODULE_DIR$/html/app/vendor/cebe/js-search" />
           <root url="file://$MODULE_DIR$/html/app/vendor/2amigos/yii2-switch-widget" />
           <root url="file://$MODULE_DIR$/html/app/vendor/yiisoft/yii2-codeception" />
+          <root url="file://$MODULE_DIR$/html/app/vendor/cebe/markdown-latex" />
           <root url="file://$MODULE_DIR$/html/app/vendor/cebe/markdown" />
           <root url="file://$MODULE_DIR$/html/app/vendor/swiftmailer/swiftmailer" />
           <root url="file://$MODULE_DIR$/html/app/vendor/bower-asset/jquery" />
@@ -114,7 +121,6 @@
           <root url="file://$MODULE_DIR$/html/app/vendor/psr/log" />
           <root url="file://$MODULE_DIR$/html/app/vendor/bower/leaflet" />
           <root url="file://$MODULE_DIR$/html/app/vendor/phpdocumentor/reflection" />
-          <root url="file://$MODULE_DIR$/html/app/vendor/gimox/bootbox" />
           <root url="file://$MODULE_DIR$/html/app/vendor/bower-asset/bootstrap" />
         </CLASSES>
         <SOURCES>
@@ -128,6 +134,7 @@
           <root url="file://$MODULE_DIR$/html/app/vendor/yiisoft/yii2" />
           <root url="file://$MODULE_DIR$/html/app/vendor/phpdocumentor/reflection-docblock" />
           <root url="file://$MODULE_DIR$/html/app/vendor/bower/jquery.inputmask" />
+          <root url="file://$MODULE_DIR$/html/app/vendor/bower/bootbox" />
           <root url="file://$MODULE_DIR$/html/app/vendor/bower-asset/jquery-ui" />
           <root url="file://$MODULE_DIR$/html/app/vendor/fortawesome/font-awesome" />
           <root url="file://$MODULE_DIR$/html/app/vendor/yiisoft/yii2-composer" />
@@ -135,6 +142,7 @@
           <root url="file://$MODULE_DIR$/html/app/vendor/yiisoft/yii2-gii" />
           <root url="file://$MODULE_DIR$/html/app/vendor/bower-asset/typeahead.js" />
           <root url="file://$MODULE_DIR$/html/app/vendor/yiisoft/yii2-apidoc" />
+          <root url="file://$MODULE_DIR$/html/app/vendor/mikevanriel/text-to-latex" />
           <root url="file://$MODULE_DIR$/html/app/vendor/2amigos/yii2-selectize-widget" />
           <root url="file://$MODULE_DIR$/html/app/vendor/phpspec/php-diff" />
           <root url="file://$MODULE_DIR$/html/app/vendor/bower-asset/punycode" />
@@ -150,8 +158,10 @@
           <root url="file://$MODULE_DIR$/html/app/vendor/yiisoft/yii2-swiftmailer" />
           <root url="file://$MODULE_DIR$/html/app/vendor/yiisoft/yii2-debug" />
           <root url="file://$MODULE_DIR$/html/app/vendor/bower/typeahead.js" />
+          <root url="file://$MODULE_DIR$/html/app/vendor/cebe/js-search" />
           <root url="file://$MODULE_DIR$/html/app/vendor/2amigos/yii2-switch-widget" />
           <root url="file://$MODULE_DIR$/html/app/vendor/yiisoft/yii2-codeception" />
+          <root url="file://$MODULE_DIR$/html/app/vendor/cebe/markdown-latex" />
           <root url="file://$MODULE_DIR$/html/app/vendor/cebe/markdown" />
           <root url="file://$MODULE_DIR$/html/app/vendor/swiftmailer/swiftmailer" />
           <root url="file://$MODULE_DIR$/html/app/vendor/bower-asset/jquery" />
@@ -160,7 +170,6 @@
           <root url="file://$MODULE_DIR$/html/app/vendor/psr/log" />
           <root url="file://$MODULE_DIR$/html/app/vendor/bower/leaflet" />
           <root url="file://$MODULE_DIR$/html/app/vendor/phpdocumentor/reflection" />
-          <root url="file://$MODULE_DIR$/html/app/vendor/gimox/bootbox" />
           <root url="file://$MODULE_DIR$/html/app/vendor/bower-asset/bootstrap" />
         </SOURCES>
       </library>
