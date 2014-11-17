@@ -26,6 +26,7 @@
       <excludeFolder url="file://$MODULE_DIR$/html/app/vendor/bower-asset/yii2-pjax" />
       <excludeFolder url="file://$MODULE_DIR$/html/app/vendor/bower/bootbox" />
       <excludeFolder url="file://$MODULE_DIR$/html/app/vendor/bower/bootstrap" />
+      <excludeFolder url="file://$MODULE_DIR$/html/app/vendor/bower/bootstrap.growl" />
       <excludeFolder url="file://$MODULE_DIR$/html/app/vendor/bower/jquery" />
       <excludeFolder url="file://$MODULE_DIR$/html/app/vendor/bower/jquery-ui" />
       <excludeFolder url="file://$MODULE_DIR$/html/app/vendor/bower/jquery.inputmask" />
@@ -83,6 +84,7 @@
           <root url="file://$MODULE_DIR$/html/app/vendor/phenx/php-font-lib" />
           <root url="file://$MODULE_DIR$/html/app/vendor/phpoffice/phpexcel" />
           <root url="file://$MODULE_DIR$/html/app/vendor/yiisoft/yii2" />
+          <root url="file://$MODULE_DIR$/html/app/vendor/bower/bootstrap.growl" />
           <root url="file://$MODULE_DIR$/html/app/vendor/phpdocumentor/reflection-docblock" />
           <root url="file://$MODULE_DIR$/html/app/vendor/bower/jquery.inputmask" />
           <root url="file://$MODULE_DIR$/html/app/vendor/bower/bootbox" />
@@ -132,6 +134,7 @@
           <root url="file://$MODULE_DIR$/html/app/vendor/phenx/php-font-lib" />
           <root url="file://$MODULE_DIR$/html/app/vendor/phpoffice/phpexcel" />
           <root url="file://$MODULE_DIR$/html/app/vendor/yiisoft/yii2" />
+          <root url="file://$MODULE_DIR$/html/app/vendor/bower/bootstrap.growl" />
           <root url="file://$MODULE_DIR$/html/app/vendor/phpdocumentor/reflection-docblock" />
           <root url="file://$MODULE_DIR$/html/app/vendor/bower/jquery.inputmask" />
           <root url="file://$MODULE_DIR$/html/app/vendor/bower/bootbox" />
