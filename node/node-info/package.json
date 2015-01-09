@@ -1,7 +1,7 @@
 {
-  "name": "node-info",
-  "description": "info tool for nodejs",
-  "version": "0.0.1",
+  "name": "simple-node-info",
+  "description": "Info tool for nodejs",
+  "version": "0.0.2",
   "author": "Giorgio Modoni <modogio@gmail.com>",
   "main": "./lib/main",
   "repository": {
@@ -9,13 +9,9 @@
     "url": "https://github.com/gimox/node-info"
   },
   "dependencies" : {
-   
   },
   "devDependencies": {
     "express" : "*"
-  },
-  "scripts": {
-    "test": "make test"
   },
   "keywords": [
     "info",
