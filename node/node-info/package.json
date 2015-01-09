@@ -1,0 +1,26 @@
+{
+  "name": "node-info",
+  "description": "info tool for nodejs",
+  "version": "0.0.1",
+  "author": "Giorgio Modoni <modogio@gmail.com>",
+  "main": "./lib/main",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gimox/node-info"
+  },
+  "dependencies" : {
+   
+  },
+  "devDependencies": {
+    "express" : "*"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "keywords": [
+    "info",
+    "stat"
+  ],
+  "license": "MIT",
+  "bugs": "https://github.com/gimox/node-info/issues"
+}
