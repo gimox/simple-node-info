@@ -1,0 +1,30 @@
+#settapp {
+
+  background-color: $background-base;
+  .list {
+    & a.item h2{
+      color : $dark;
+
+    }
+
+    & a.item {
+
+    }
+
+  }
+
+  .item {
+    color: $calm;
+  }
+
+
+
+  .item.item-divider{
+    color: $dark;
+    border-bottom:1px solid $border-list-color;
+  }
+
+  .item i {
+    color : $dark;
+  }
+}

@@ -1,0 +1,55 @@
+<ion-view view-title="<img src='img/logolight.svg' class='logo-header'>">
+    <ion-content id="search-match" class="animate-fade-slide-in">
+        <!-- Loading !-->
+        <div ng-if="loading">
+            <div class="row user-avatar">
+                <div class="row" id="circle" circle-blink>
+                    <img ng-src="{{avatar}}">
+                </div>
+            </div>
+            <div class="padding">
+                Attendi stiamo cercando persone con interessi simili vicino a te..
+                <span ng-show="!hasPosition"> <br/>Controllo la tua posizione..</span>
+                <span class="error-message" ng-show="hasError"> <br/>Si è verificato un errore riprova più tardi</span>
+            </div>
+        </div>
+        <!-- END loading !-->
+
+
+        <ion-slide-box
+                delegate-handle="slidebox"
+                on-slide-changed="slideHasChanged($index)">
+
+            <ion-slide ng-repeat="friend in friends">
+                <div class="user-img-profile padding" style="background: url({{SrcMatchCtrl.getImage(friend.im_avatar_img)}}) no-repeat center; background-size: cover"></div>
+            </ion-slide>
+        </ion-slide-box>
+
+
+        <div class="list">
+
+            <div class="item profile-name item-icon-right">
+                <span>{{friends[slidePosition].avatar_name}}</span>
+                <span ng-show="age(friends[slidePosition].born_date)">, {{age(friends[slidePosition].born_date)}}</span>
+
+            </div>
+
+            <div ng-show="friend.base.description" class="divider" style="padding-left:10px; padding-right:10px; padding-top:5px; padding-bottom:5px;">
+                <small>{{user.base.description }}</small>
+            </div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+
+
+
+
+       {{slidePosition}}
+    </ion-content>
+</ion-view>

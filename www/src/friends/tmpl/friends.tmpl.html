@@ -1,0 +1,16 @@
+<ion-view view-title="Inviti">
+    <ion-content id="friends" class="animate-fade-slide-in">
+
+        <div class="list">
+
+            <a ng-repeat="friend in friends" class="item item-avatar item-icon-right" ui-sref="main.friendprofile({id:friend.id_user})">
+                <img ng-src="{{frsCtrl.getImage(friend.im_avatar_img)}}">
+                <h2>{{friend.avatar_name}}, {{frsCtrl.getAge(friend.born_date)}}</h2>
+
+                <p>It's a match!</p>
+                <i class="icon ion-ios-arrow-right"></i>
+            </a>
+
+        </div>
+    </ion-content>
+</ion-view>

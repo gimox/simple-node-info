@@ -1,0 +1,30 @@
+#profile-edit {
+   .input-label {
+     color: $calm;
+   }
+  background-color: $background-base;
+
+  input,textarea {
+    color: $dark;
+  }
+
+  select {
+    background-color: transparent;
+  }
+
+
+  .item-select {
+    border-bottom: 1px solid #CCC;
+  }
+
+  .item-input {
+    padding: 10px;
+    textarea {
+      margin-top:10px;
+      height: 80px;
+      padding:10px;
+      border: 1px solid #f5f5f5;
+      border-radius: 2px;
+    }
+  }
+}

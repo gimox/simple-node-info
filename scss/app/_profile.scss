@@ -1,0 +1,78 @@
+.user-card {
+  background-color: $calm;
+  text-align: center;
+  color: #ffffff;
+  height: 285px;
+}
+
+#profile {
+
+  background-color: $background-base;
+  .ion-record {
+    color: #ffffff !important;
+  }
+  .button-interest {
+    padding: 6px;
+    border-color: $dark;
+    border-style: solid;
+    border-radius: 3px;
+    border-width: 1px !important;
+    color: $dark;
+    font-size: 10px;
+    margin-top:7px;
+  }
+
+  div,a  {
+    color: $dark;
+
+  }
+
+  div .divider, a .divider {
+    border-bottom:1px solid #E1E1E1;
+  }
+  .profile-name {
+    font-size: 16px;
+    color: $dark;
+    & span:first-child {
+      font-weight: bolder;
+    }
+  }
+  /*
+    .list {
+      div, a {
+        border-bottom:1px solid #CCC;
+      }
+    }
+    */
+}
+
+.user-img1 {
+  @extend .user-card;
+  background: $calm url($background_one) center;
+  background-size: auto;
+
+  > div {
+    font-size: 22px;
+    margin-top: 10px;
+  }
+
+  img {
+    margin-top: 0;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    padding: 8px;
+  }
+
+}
+
+.user-img-profile {
+  @extend .user-card;
+
+  //  background-color:$dark;
+  > div {
+    font-size: 12px;
+    margin-top: 10px;
+  }
+}

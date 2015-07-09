@@ -1,0 +1,12 @@
+{
+  "name": "qoojoin",
+  "app_id": "b1f860a2",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
+}

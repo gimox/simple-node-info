@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+
+    <!-- compiled css output -->
+    <link href="css/ionic.app.css" rel="stylesheet">
+    <link href="css/interestsicon.css" rel="stylesheet">
+    <!-- <link href="lib/ionic-material/dist/ionic.material.min.css" rel="stylesheet">!-->
+
+    <!-- angular library -->
+    <!-- <script src="lib/angular-messages/angular-messages.min.js"></script>!-->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/ionic-material/dist/ionic.material.min.js"></script>
+
+    <!-- angular vendor -->
+    <script src="lib/a0-angular-storage/dist/angular-storage.min.js"></script>
+    <script src="lib/angular-jwt/dist/angular-jwt.min.js"></script>
+
+    <script src="lib/gsap/src/minified/TweenMax.min.js"></script>
+    <script src="lib/gsap/src/minified/TimelineMax.min.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+  <!--  <script src="cordova.js"></script> !-->
+
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/ionic-service-core/ionic-core.js"></script>
+    <script src="lib/ionic-service-deploy/ionic-deploy.js"></script>
+
+
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="src/app.js"></script>
+    <!-- components menu -->
+    <script src="src/components/utils.factory.js"></script>
+    <script src="src/components/token.factory.js"></script>
+    <script src="src/components/storage.factory.js"></script>
+    <script src="src/components/image.factory.js"></script>
+    <script src="src/components/geolocalization.factory.js"></script>
+
+    <!-- main !-->
+    <script src="src/main/main.routes.js"></script>
+    <script src="src/main/Main.controller.js"></script>
+
+    <!-- search !-->
+    <script src="src/search/circle.blick.directive.js"></script>
+    <script src="src/search/search.routes.js"></script>
+    <script src="src/search/search.factory.js"></script>
+    <script src="src/search/search.controller.js"></script>
+    <script src="src/search/search.near.controller.js"></script>
+    <script src="src/search/search.profile.controller.js"></script>
+    <script src="src/search/search.match.controller.js"></script>
+
+    <!-- profile !-->
+    <script src="src/profile/profile.routes.js"></script>
+    <script src="src/profile/profile.factory.js"></script>
+    <script src="src/profile/profile.controller.js"></script>
+    <script src="src/profile/profile.interest.controller.js"></script>
+    <script src="src/profile/profile.edit.controller.js"></script>
+
+    <!-- Login -->
+    <script src="src/login/login.routes.js"></script>
+    <script src="src/login/Auth.factory.js"></script>
+    <script src="src/login/controllers/Login.controller.js"></script>
+    <script src="src/login/controllers/Signin.controller.js"></script>
+    <script src="src/login/controllers/Signinlocal.controller.js"></script>
+
+    <!-- settings !-->
+    <script src="src/settings/settings.routes.js"></script>
+    <script src="src/settings/settings.factory.js"></script>
+    <script src="src/settings/settings.controller.js"></script>
+    <script src="src/settings/settings.visibility.controller.js"></script>
+    <script src="src/settings/settings.app.controller.js"></script>
+
+    <!-- friends !-->
+    <script src="src/friends/friends.routes.js"></script>
+    <script src="src/friends/friends.controller.js"></script>
+    <script src="src/friends/friends.factory.js"></script>
+    <script src="src/friends/friend.controller.js"></script>
+
+</head>
+<body ng-app="app">
+
+<ion-nav-bar class="bar-light nav-title-slide-ios7">
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+</ion-nav-bar>
+
+<ion-nav-view></ion-nav-view>
+</body>
+</html>

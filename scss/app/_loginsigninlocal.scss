@@ -1,0 +1,43 @@
+#signinlocal {
+  background: $background-base url($background_one) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+
+
+  .list {
+   // background-color: transparent;
+    border:1px solid #f5f5f5;
+    border-radius: 4px;
+
+    .item {
+    border-color: $dark;
+  }
+
+    input {
+      color: $dark;
+    }
+
+
+  }
+  .list-inset {
+    margin:10px 10px;
+    opacity: 0.9;
+
+  }
+
+
+
+  div.logo {
+
+    > div.col {
+      text-align: center;
+    }
+
+    img {
+      width: 70%;
+      margin-top:20px;
+    }
+  }
+
+}

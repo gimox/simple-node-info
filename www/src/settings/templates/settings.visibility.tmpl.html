@@ -1,0 +1,75 @@
+<ion-view view-title="Visibilità">
+
+    <ion-content id="visibility">
+
+        <div class="list">
+
+            <div class="item item-divider">
+                Profilo {{updateV()}}
+            </div>
+
+            <ion-toggle ng-model="user.visibility.v_set_hide_profile"
+                        ng-true-value="1"
+                        ng-false-value="0"
+                        ng-change="svisCtrl.update()"
+                        toggle-class="toggle-calm">
+                Visibilità Profilo
+            </ion-toggle>
+
+            <div class="item item-divider">
+                Distanza ricerca amici vicino a te: {{user.visibility.v_set_distance}}Km
+            </div>
+            <div class="list">
+                <div class="item range range-calm">
+                    <i class="icon ion-ios-location-outline"></i>
+                    <input type="range"
+                           name="v_set_distance"
+                           min="1"
+                           max="100"
+                           ng-model="user.visibility.v_set_distance"
+                           on-release="svisCtrl.update()">
+
+                    <i class="icon ion-ios-location"></i>
+                </div>
+            </div>
+
+            <div class="item item-divider">
+                Ricerca età minima: {{user.visibility.v_set_age_1}}
+            </div>
+
+            <div class="list">
+                <div class="item range range-calm">
+                    <i class="icon ion-ios-body-outline"></i>
+                    <input type="range"
+                           name="v_set_age_1"
+                           min="0" max="100"
+                           ng-model="user.visibility.v_set_age_1"
+                           ng-change="svisCtrl.setMaxAge()"
+                           on-release="svisCtrl.update()"
+                            >
+                    <i class="icon ion-ios-body"></i>
+                </div>
+            </div>
+
+            <div class="item item-divider">
+                Ricerca età massima: {{user.visibility.v_set_age_2}}
+            </div>
+
+            <div class="list">
+                <div class="item range range-calm">
+                    <i class="icon ion-ios-person-outline"></i>
+                    <input type="range"
+                           name="v_set_age_2"
+                           min="0"
+                           max="100"
+                           ng-model="user.visibility.v_set_age_2"
+                           ng-change="svisCtrl.setMinAge()"
+                           on-release="svisCtrl.update()">
+                    <i class="icon ion-ios-person"></i>
+                </div>
+            </div>
+
+
+        </div>
+    </ion-content>
+</ion-view>

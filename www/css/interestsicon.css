@@ -1,0 +1,49 @@
+@font-face {
+    font-family: 'icomoon';
+    src:url('fonts/icomoon.eot?ms2yxu');
+    src:url('fonts/icomoon.eot?#iefixms2yxu') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?ms2yxu') format('truetype'),
+    url('fonts/icomoon.woff?ms2yxu') format('woff'),
+    url('fonts/icomoon.svg?ms2yxu#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-my-ionicons-couple:before {
+    content: "\e601";
+}
+.icon-my-ionicons-fun:before {
+    content: "\e602";
+}
+.icon-my-ionicons-group:before {
+    content: "\e603";
+}
+.icon-my-ionicons-join:before {
+    content: "\e604";
+}
+.icon-my-ionicons-play:before {
+    content: "\e605";
+}
+.icon-my-ionicons-tour:before {
+    content: "\e606";
+}
+.icon-my-ionicons-female:before {
+    content: "\e607";
+}
+.icon-my-ionicons-male:before {
+    content: "\e600";
+}

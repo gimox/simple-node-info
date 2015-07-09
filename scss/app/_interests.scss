@@ -1,0 +1,40 @@
+#interest{
+  background-color: $background-base;
+  .row-interest{
+    margin-top:10px;
+
+    & div:last-child {
+      color: $calm;
+      width: 100%;
+      text-align: center;
+    }
+
+
+  }
+
+
+
+  .col-interest{
+    border:2px solid $calm;
+    text-align: center;
+    border-radius:2px;
+    width: 100%;
+    cursor: pointer;
+
+    & i {
+      color: $calm;
+     font-size: 90px;
+    }
+
+  }
+
+
+  .interest-selected .col-interest{
+    background-color: $calm;
+
+    & i {
+      color: #FFF;
+    }
+  }
+
+}
