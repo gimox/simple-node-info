@@ -8,7 +8,7 @@ angular.module('app')
         };
 
         this.getImage = function (img) {
-            console.log('LIST IMG',img);
+          
             if(!img) {
                 return 'img/thumb-profile.jpg'
             }

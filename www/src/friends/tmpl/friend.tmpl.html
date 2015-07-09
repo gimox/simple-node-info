@@ -2,7 +2,7 @@
     <ion-content id="friend">
         <ion-slide-box on-slide-changed="slideHasChanged($index)">
             <ion-slide>
-                <div class="user-img-profile padding" style="background: url({{img1}}) no-repeat center; background-size: cover">
+                <div ng-if="img1" class="user-img-profile padding" style="background: url({{img1}}) no-repeat center; background-size: cover">
 
                 </div>
 
