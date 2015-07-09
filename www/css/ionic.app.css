@@ -9847,7 +9847,7 @@ a {
 
 }
 */
-.user-card, .user-img1, .user-img-profile {
+.user-card, .user-img1 {
   background-color: #00ACC1;
   text-align: center;
   color: #ffffff;
@@ -9897,9 +9897,21 @@ a {
     border: 2px solid #ffffff;
     padding: 8px; }
 
-.user-img-profile > div {
-  font-size: 12px;
-  margin-top: 10px; }
+.user-img-profile {
+  background-color: #00ACC1;
+  text-align: center;
+  color: #ffffff;
+  height: 285px; }
+  .user-img-profile > div {
+    font-size: 12px;
+    margin-top: 10px; }
+
+@media screen and (min-width: 768px) {
+  .user-img-profile, .user-img1 {
+    height: 550px; }
+  .user-img1 img {
+    width: 400px;
+    height: 400px; } }
 
 #login {
   background: #fcfcfc url("../img/qoojoinciny.png") no-repeat center center fixed;
