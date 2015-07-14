@@ -27,6 +27,7 @@ angular.module('app')
 
             .state('main.friendprofile', {
                 url  : "/people-profile/:id",
+                cache: false,
                 views: {
                     'people-tab': {
                         templateUrl: "src/friends/tmpl/friend.tmpl.html",

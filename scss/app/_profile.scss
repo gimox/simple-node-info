@@ -5,9 +5,14 @@
   height: 285px;
 }
 
-#profile {
+.slider-pager .slider-pager-page {
+  color:#FFF;
+}
 
+#profile, .profilestyle {
   background-color: $background-base;
+  padding-top: 285px;
+
   .ion-record {
     color: #ffffff !important;
   }
@@ -19,16 +24,16 @@
     border-width: 1px !important;
     color: $dark;
     font-size: 10px;
-    margin-top:7px;
+    margin-top: 7px;
   }
 
-  div,a  {
+  div, a {
     color: $dark;
 
   }
 
   div .divider, a .divider {
-    border-bottom:1px solid #E1E1E1;
+    border-bottom: 1px solid #E1E1E1;
   }
   .profile-name {
     font-size: 16px;
@@ -67,14 +72,12 @@
 
 }
 
-.user-img-profile {
-   background-color: $calm;
+.user-img-profile, #profileSlideBox, #profileFriendSlidebox,#profileSearchNearSlidebox {
+  background-color: $calm;
   text-align: center;
   color: #ffffff;
   height: 285px;
 
-
-  //  background-color:$dark;
   > div {
     font-size: 12px;
     margin-top: 10px;
@@ -82,7 +85,11 @@
 }
 
 @media screen and (min-width: 768px) {
-  .user-img-profile, .user-img1 {
+
+  #profile, #friend {
+    padding-top: 550px;
+  }
+  #profileSlideBox, #profileFriendSlidebox,#profileSearchNearSlidebox, .user-img-profile, .user-img1 {
     height: 550px;
   }
 

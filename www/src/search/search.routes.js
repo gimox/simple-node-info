@@ -3,6 +3,7 @@ angular.module('app')
         $stateProvider
             .state('main.search', {
                 url  : "/search",
+                cache:false,
                 views: {
                     'search-tab': {
                         templateUrl: "src/search/tmpl/search.tmpl.html",
@@ -34,6 +35,7 @@ angular.module('app')
 
             .state('main.search-profile', {
                 url  : "/search-profile/:id",
+                cache: false,
                 views: {
                     'search-tab': {
                         templateUrl: "src/search/tmpl/search.profile.tmpl.html",

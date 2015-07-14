@@ -1,37 +1,29 @@
 <ion-view view-title="">
-    <ion-content id="friend">
-        <ion-slide-box on-slide-changed="slideHasChanged($index)">
-            <ion-slide>
-                <div ng-if="img1" class="user-img-profile padding" style="background: url({{img1}}) no-repeat center; background-size: cover">
-
-                </div>
-
-            </ion-slide>
-
-            <ion-slide ng-if="img2">
-                <div class="user-img-profile padding" style="background: url({{img2}}) no-repeat center; background-size: cover">
-                    <!-- <div>{{friend.base.avatar_name}}, {{age}}</div> !-->
-                </div>
-            </ion-slide>
-            <ion-slide ng-if="img3">
-                <div class="user-img-profile padding" style="background: url({{img3}}) no-repeat center; background-size: cover">
-                </div>
-            </ion-slide>
-
-            <ion-slide ng-if="img4">
-                <div class="user-img-profile padding" style="background: url({{img4}}) no-repeat center; background-size: cover">
-                </div>
-            </ion-slide>
-
-            <ion-slide ng-if="img5">
-                <div class="user-img-profile padding" style="background: url({{img5}}) no-repeat center; background-size: cover">
-                    <!--  <div>{{user.base.avatar_name}}, {{age}}</div> !-->
-                </div>
-            </ion-slide>
-        </ion-slide-box>
 
 
-        <div class="list">
+        <ion-pane style="top:33px;" id="profileFriendSlidebox">
+            <ion-slide-box>
+                <ion-slide>
+                    <div ng-if="img1" class="user-img-profile padding imgslideFriend" style="background: url({{img1}}) no-repeat center; background-size: cover"></div>
+                </ion-slide>
+                <ion-slide ng-if="img2">
+                    <div class="user-img-profile padding imgslideFriend" style="background: url({{img2}}) no-repeat center; background-size: cover"></div>
+                </ion-slide>
+                <ion-slide ng-if="img3">
+                    <div class="user-img-profile padding imgslideFriend" style="background: url({{img3}}) no-repeat center; background-size: cover"></div>
+                </ion-slide>
+                <ion-slide ng-if="img4">
+                    <div class="user-img-profile padding imgslideFriend" style="background: url({{img4}}) no-repeat center; background-size: cover"> </div>
+                </ion-slide>
+                <ion-slide ng-if="img5">
+                    <div class="user-img-profile padding imgslideFriend" style="background: url({{img5}}) no-repeat center; background-size: cover"></div>
+                </ion-slide>
+            </ion-slide-box>
+        </ion-pane>
+
+        <ion-content id="friend" class="profilestyle" on-scroll="fxscroll()">
+
+            <div class="list">
 
             <div class="item profile-name item-icon-right">
                 <span>{{friend.base.avatar_name}}</span>

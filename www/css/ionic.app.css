@@ -9813,6 +9813,16 @@ a {
   margin: 0 auto;
   width: 100%; }
 
+.ink, .back-button {
+  border-radius: 2px; }
+
+.back-button {
+  padding-left: 5px !important;
+  padding-right: 5px !important; }
+
+.tab-item {
+  border-radius: 2px; }
+
 /*
 
 .center-content{
@@ -9853,8 +9863,12 @@ a {
   color: #ffffff;
   height: 285px; }
 
-#profile {
+.slider-pager .slider-pager-page {
+  color: #FFF; }
+
+#profile, .profilestyle {
   background-color: #fcfcfc;
+  padding-top: 285px;
   /*
     .list {
       div, a {
@@ -9862,9 +9876,9 @@ a {
       }
     }
     */ }
-  #profile .ion-record {
+  #profile .ion-record, .profilestyle .ion-record {
     color: #ffffff !important; }
-  #profile .button-interest {
+  #profile .button-interest, .profilestyle .button-interest {
     padding: 6px;
     border-color: #607D8B;
     border-style: solid;
@@ -9873,14 +9887,14 @@ a {
     color: #607D8B;
     font-size: 10px;
     margin-top: 7px; }
-  #profile div, #profile a {
+  #profile div, #profile a, .profilestyle div, .profilestyle a {
     color: #607D8B; }
-  #profile div .divider, #profile a .divider {
+  #profile div .divider, #profile a .divider, .profilestyle div .divider, .profilestyle a .divider {
     border-bottom: 1px solid #E1E1E1; }
-  #profile .profile-name {
+  #profile .profile-name, .profilestyle .profile-name {
     font-size: 16px;
     color: #607D8B; }
-    #profile .profile-name span:first-child {
+    #profile .profile-name span:first-child, .profilestyle .profile-name span:first-child {
       font-weight: bolder; }
 
 .user-img1 {
@@ -9897,17 +9911,19 @@ a {
     border: 2px solid #ffffff;
     padding: 8px; }
 
-.user-img-profile {
+.user-img-profile, #profileSlideBox, #profileFriendSlidebox, #profileSearchNearSlidebox {
   background-color: #00ACC1;
   text-align: center;
   color: #ffffff;
   height: 285px; }
-  .user-img-profile > div {
+  .user-img-profile > div, #profileSlideBox > div, #profileFriendSlidebox > div, #profileSearchNearSlidebox > div {
     font-size: 12px;
     margin-top: 10px; }
 
 @media screen and (min-width: 768px) {
-  .user-img-profile, .user-img1 {
+  #profile, #friend {
+    padding-top: 550px; }
+  #profileSlideBox, #profileFriendSlidebox, #profileSearchNearSlidebox, .user-img-profile, .user-img1 {
     height: 550px; }
   .user-img1 img {
     width: 400px;
@@ -10174,6 +10190,29 @@ a {
     #search-match .profile-name span:first-child {
       font-weight: bolder; }
 
+#search-profile {
+  background-color: #fcfcfc; }
+  #search-profile .ion-record {
+    color: #ffffff !important; }
+  #search-profile .button-interest {
+    padding: 6px;
+    border-color: #607D8B;
+    border-style: solid;
+    border-radius: 3px;
+    border-width: 1px !important;
+    color: #607D8B;
+    font-size: 10px;
+    margin-top: 7px; }
+  #search-profile div, #search-profile a {
+    color: #607D8B; }
+  #search-profile div .divider, #search-profile a .divider {
+    border-bottom: 1px solid #E1E1E1; }
+  #search-profile .profile-name {
+    font-size: 16px;
+    color: #607D8B; }
+    #search-profile .profile-name span:first-child {
+      font-weight: bolder; }
+
 #profile-edit {
   background-color: #fcfcfc; }
   #profile-edit .input-label {
@@ -10182,6 +10221,10 @@ a {
     color: #607D8B; }
   #profile-edit select {
     background-color: transparent; }
+  #profile-edit .separator {
+    width: 100%;
+    height: 3px;
+    background-color: #607D8B; }
   #profile-edit .item-select {
     border-bottom: 1px solid #CCC; }
   #profile-edit .item-input {
@@ -10192,3 +10235,38 @@ a {
       padding: 10px;
       border: 1px solid #f5f5f5;
       border-radius: 2px; }
+
+#profile-images {
+  background: #fcfcfc url("../img/qoojoinciny.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover; }
+  #profile-images .col div {
+    border: 1px solid #E1E1E1;
+    padding: 5px;
+    padding-bottom: 0;
+    background-color: #FFF;
+    border-radius: 2px; }
+
+#error {
+  background: #fcfcfc url("../img/qoojoinciny.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  text-align: center;
+  color: #00ACC1; }
+  #error h5 {
+    color: #607D8B; }
+  #error .ion-wifi:before {
+    font-size: 90px;
+    margin-top: 30px; }
+  #error .button-icon {
+    border: none;
+    box-shadow: none;
+    font-size: 40px;
+    height: 40px; }
+  #error div.logo > div.col {
+    text-align: center; }
+  #error div.logo img {
+    width: 50%;
+    margin-top: 20px; }

@@ -12,7 +12,11 @@
     background-color: transparent;
   }
 
-
+.separator {
+  width: 100%;
+  height: 3px;
+  background-color: $dark;
+}
   .item-select {
     border-bottom: 1px solid #CCC;
   }

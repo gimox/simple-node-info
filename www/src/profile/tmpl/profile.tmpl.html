@@ -1,45 +1,56 @@
 <ion-view view-title="Profilo">
     <ion-nav-buttons side="primary">
-        <button class="button button-icon  icon ion-ios-gear-outline" ui-sref="main.settings"></button>
+        <button class="button button-icon  icon ion-ios-gear-outline ink ink-dark" ui-sref="main.settings"></button>
     </ion-nav-buttons>
 
     <ion-nav-buttons side="secondary">
-        <button class="button button-icon icon ion-ios-compose-outline" ui-sref="main.profile-edit"></button>
+        <button class="button button-icon icon ion-ios-camera-outline ink ink-dark" ui-sref="main.profile-image"></button>
+        <button class="button button-icon icon ion-ios-compose-outline ink ink-dark" ui-sref="main.profile-edit"></button>
     </ion-nav-buttons>
 
+    <ion-pane style="top:54px;" id="profileSlideBox">
 
-    <ion-content id="profile" class="animate-fade-slide-in">
-        <ion-slide-box on-slide-changed="slideHasChanged($index)" >
+        <ion-slide-box>
             <ion-slide>
-                <div class="user-img1 padding">
-                    <img ng-src="{{img1}}">
+                <div class="user-img1 padding imgslide">
+                    <img ng-src="{{img1}}" class="profile-avatar">
                 </div>
-
             </ion-slide>
 
             <ion-slide ng-if="img2">
-                <div class="user-img-profile padding" style="background: url({{img2}}) no-repeat center; background-size: cover">
+                <div class="user-img-profile padding imgslide" style="background: url({{img2}}) no-repeat center; background-size: cover">
 
                 </div>
             </ion-slide>
             <ion-slide ng-if="img3">
-                <div class="user-img-profile padding" style="background: url({{img3}}) no-repeat center; background-size: cover">
+                <div class="user-img-profile padding imgslide" style="background: url({{img3}}) no-repeat center; background-size: cover">
 
                 </div>
             </ion-slide>
 
             <ion-slide ng-if="img4">
-                <div class="user-img-profile padding" style="background: url({{img4}}) no-repeat center; background-size: cover">
+                <div class="user-img-profile padding imgslide" style="background: url({{img4}}) no-repeat center; background-size: cover">
 
                 </div>
             </ion-slide>
 
             <ion-slide ng-if="img5">
-                <div class="user-img-profile padding" style="background: url({{img5}}) no-repeat center; background-size: cover">
-                   <!-- <div>{{user.base.avatar_name}}, {{age}}</div>!-->
+                <div class="user-img-profile padding imgslide" style="background: url({{img5}}) no-repeat center; background-size: cover">
+
                 </div>
             </ion-slide>
+
+            <ion-slide ng-if="img6">
+                <div class="user-img-profile padding imgslide" style="background: url({{img6}}) no-repeat center; background-size: cover">
+                </div>
+            </ion-slide>
+
         </ion-slide-box>
+    </ion-pane>
+
+    <ion-content id="profile"
+                 class="animate-fade-slide-in"
+                 on-scroll="fxscroll()">
 
         <div class="list">
 
@@ -52,7 +63,7 @@
                 <small>{{user.base.description }}</small>
             </div>
 
-            <div ng-hide="user.base.description" class="divider item" style="text-align:center; padding-left:10px; padding-right:10px; padding-top:5px; padding-bottom:5px;">
+            <div ng-if="!user.base.description" class="divider item" style="text-align:center; padding-left:10px; padding-right:10px; padding-top:5px; padding-bottom:5px;">
                 Il tuo profilo non ha ancora una descrizione!
             </div>
 
@@ -68,7 +79,7 @@
                 <i class="icon ion-ios-arrow-right"></i>
             </a>
 
-            <div class="padding anim" style="background-color: #fff">
+            <div class="padding item" style=" margin-top:5px; white-space: normal; word-wrap: normal">
             <span ng-repeat="(key,value) in user.interest">
                    <button ng-if="value" class="button button-light button-flat button-interest button-small">
                        <i class="icon" ng-class="prfCtrl.getIncons(key)"></i> {{prfCtrl.getInterestName(key)}}
@@ -78,6 +89,6 @@
 
         </div>
 
-
     </ion-content>
+
 </ion-view>

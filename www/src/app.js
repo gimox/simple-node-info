@@ -7,9 +7,12 @@ angular.module('app', [
     'angular-storage',
     'ionic-material'
 ])
+
+
     .constant('API_URL', 'http://api.quoozy.com:8080/api')
-   // .constant('API_URL', 'http://localhost:8080/api')
-    .run(function ($ionicPlatform, $rootScope, $cordovaStatusbar, $cordovaAppVersion, $cordovaDevice) {
+    //.constant("API_URL", 'http://localhost:8080/api')
+   //  .constant('API_URL', '192.168.200.105:8080/api')
+    .run(function ($ionicPlatform, $rootScope, $cordovaStatusbar, $cordovaAppVersion, $cordovaDevice,UpdateFactory) {
 
         $rootScope.loading = false;
 
@@ -17,7 +20,6 @@ angular.module('app', [
             .$on('$stateChangeStart',
             function(event, toState, toParams, fromState, fromParams){
                 $rootScope.loading = true;
-                console.log('stateChange');
                 $rootScope.$broadcast('stateChangeStart',1);
             });
 
@@ -25,7 +27,6 @@ angular.module('app', [
             .$on('$stateChangeSuccess',
             function(event, toState, toParams, fromState, fromParams){
                 $rootScope.loading = false;
-                console.log('endstateChange');
                 $rootScope.$broadcast('stateChangeSuccess',1);
             });
 
@@ -65,6 +66,11 @@ angular.module('app', [
                     console.log(e);
                 }
             }
+
+
+
+             UpdateFactory.check();
+
 
         });
 

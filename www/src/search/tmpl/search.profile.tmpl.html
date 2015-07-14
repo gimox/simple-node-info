@@ -1,44 +1,47 @@
 <ion-view view-title="">
 
-  <!--  ion-ios-close-outline
-   ion-android-bar!-->
-
-
     <ion-nav-buttons side="secondary">
-        <button class="button button-icon icon ion-ios-close-outline assertive-btn" ></button>
-        <button class="button button-icon icon ion-android-bar calm-btn"></button>
+        <button class="button button-icon icon ion-ios-close-outline assertive-btn ink-dark ink" ng-click="srcprCtrl.hideFriend(friend.base.id_user)"></button>
+        <button class="button button-icon icon ion-android-bar calm-btn  ink-dark ink" ng-click="srcprCtrl.setFriend(friend.base.id_user)"></button>
     </ion-nav-buttons>
 
-    <ion-content id="friend">
-        <ion-slide-box on-slide-changed="slideHasChanged($index)">
-            <ion-slide>
-                <div class="user-img-profile padding" style="background: url({{img1}}) no-repeat center; background-size: cover">
+
+    <ion-pane style="top:33px;" id="profileSearchNearSlidebox">
+        <ion-slide-box>
+            <ion-slide ng-if="img1">
+                <div class="user-img-profile padding imgslideNear"
+                     style="background: url({{img1}}) no-repeat center; background-size: cover">
                 </div>
             </ion-slide>
-
             <ion-slide ng-if="img2">
-                <div class="user-img-profile padding" style="background: url({{img2}}) no-repeat center; background-size: cover">
-                    <!-- <div>{{friend.base.avatar_name}}, {{age}}</div> !-->
+                <div class="user-img-profile padding imgslideNear"
+                     style="background: url({{img2}}) no-repeat center; background-size: cover">
                 </div>
             </ion-slide>
-
             <ion-slide ng-if="img3">
-                <div class="user-img-profile padding" style="background: url({{img3}}) no-repeat center; background-size: cover">
+                <div class="user-img-profile padding imgslideNear"
+                     style="background: url({{img3}}) no-repeat center; background-size: cover">
                 </div>
             </ion-slide>
-
             <ion-slide ng-if="img4">
-                <div class="user-img-profile padding" style="background: url({{img4}}) no-repeat center; background-size: cover">
+                <div class="user-img-profile padding imgslideNear"
+                     style="background: url({{img4}}) no-repeat center; background-size: cover">
                 </div>
             </ion-slide>
-
-            <ion-slide ng-if="img5" style="background: url({{img5}}) no-repeat center; background-size: cover">
-                <div class="user-img-profile padding">
-                    <!--  <div>{{user.base.avatar_name}}, {{age}}</div> !-->
+            <ion-slide ng-if="img5">
+                <div class="user-img-profile padding imgslideNear"
+                     style="background: url({{img5}}) no-repeat center; background-size: cover">
+                </div>
+            </ion-slide>
+            <ion-slide ng-if="img6">
+                <div class="user-img-profile padding imgslideNear"
+                     style="background: url({{img6}}) no-repeat center; background-size: cover">
                 </div>
             </ion-slide>
         </ion-slide-box>
+    </ion-pane>
 
+    <ion-content id="search-profile" class="profilestyle" on-scroll="fxscroll()">
 
         <div class="list">
 
@@ -55,7 +58,7 @@
                 <!--  Il tuo profilo non ha ancora una descrizione!-->
             </div>
 
-            <div class="item item-icon-left app-color divider" >
+            <div class="item item-icon-left app-color divider">
                 <i class="icon ion-ios-people app-color"></i>
                 Amici in comune
                 <span class="badge" ng-class="friendsColor()">{{friend.base.num_friends}}</span>
@@ -74,4 +77,4 @@
 
         </ion-slide-box>
     </ion-content>
-</ion-view>i
+</ion-view>

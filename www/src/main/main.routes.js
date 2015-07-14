@@ -8,10 +8,7 @@ angular.module('app')
                 templateUrl: "src/main/tmpl/main.tmpl.html",
                 controller: "MainController as mainCtrl",
                 resolve    : {
-
-
                     user: ['$q', '$rootScope', 'store', '$http', 'API_URL','storage', function ($q, $rootScope, store, $http, API_URL,storage) {
-
 
                         var deferred = $q.defer();
                         var token = store.get('qoojoin.auth-token');
@@ -23,21 +20,17 @@ angular.module('app')
 
                             $http.get(API_URL + '/users/profile/full')
                                 .then(function success(response) {
-
                                     if (response.data.user) {
-
-
                                         storage.set('user',response.data.user);
-
                                         deferred.resolve(response.data.user);
                                     }else {
                                         deferred.reject(err);
                                     }
-
                                 })
 
                                 .catch(function (err) {
-                                    deferred.reject(err);
+                                    deferred.resolve({error:1,message:err});
+                                   // deferred.reject({error:1,message:err});
                                 });
                         }
 

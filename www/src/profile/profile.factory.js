@@ -10,14 +10,24 @@ angular.module('app')
 
             console.log(params);
 
-            return $http.post(API_URL + '/users/update',params)
+            return $http.post(API_URL + '/users/update', params)
                 .then(function success(response) {
                     return response;
                 });
         }
 
+
+        function deleteImage(imgtype) {
+            return $http.put(API_URL + '/users/deleteImage/' + imgtype)
+                .then(function success(response) {
+                    return response;
+                });
+        }
+
+
         return {
-            update: update
+            update     : update,
+            deleteImage: deleteImage
         }
 
     });
