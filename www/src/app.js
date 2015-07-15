@@ -11,23 +11,23 @@ angular.module('app', [
 
     .constant('API_URL', 'http://api.quoozy.com:8080/api')
     //.constant("API_URL", 'http://localhost:8080/api')
-   //  .constant('API_URL', '192.168.200.105:8080/api')
-    .run(function ($ionicPlatform, $rootScope, $cordovaStatusbar, $cordovaAppVersion, $cordovaDevice,UpdateFactory) {
+    //  .constant('API_URL', '192.168.200.105:8080/api')
+    .run(function ($ionicPlatform, $rootScope, $cordovaStatusbar, $cordovaAppVersion, $cordovaDevice, UpdateFactory) {
 
         $rootScope.loading = false;
 
         $rootScope
             .$on('$stateChangeStart',
-            function(event, toState, toParams, fromState, fromParams){
+            function (event, toState, toParams, fromState, fromParams) {
                 $rootScope.loading = true;
-                $rootScope.$broadcast('stateChangeStart',1);
+                $rootScope.$broadcast('stateChangeStart', 1);
             });
 
         $rootScope
             .$on('$stateChangeSuccess',
-            function(event, toState, toParams, fromState, fromParams){
+            function (event, toState, toParams, fromState, fromParams) {
                 $rootScope.loading = false;
-                $rootScope.$broadcast('stateChangeSuccess',1);
+                $rootScope.$broadcast('stateChangeSuccess', 1);
             });
 
 
@@ -67,10 +67,7 @@ angular.module('app', [
                 }
             }
 
-
-
-             UpdateFactory.check();
-
+          //  UpdateFactory.check();
 
         });
 
@@ -79,9 +76,9 @@ angular.module('app', [
     .config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider, $ionicAppProvider) {
 
 
-      //  $ionicConfigProvider.views.forwardCache(true);
-
-
+        //  $ionicConfigProvider.views.forwardCache(true);
+//
+        //if(!ionic.Platform.isIOS()) $ionicConfigProvider.scrolling.jsScrolling(false);
         $ionicAppProvider.identify({
             app_id : 'b1f860a2',
             api_key: 'aa05e9ac02575e3188976fc3dc283cfcd5189c484615202a'
@@ -90,7 +87,7 @@ angular.module('app', [
         });
 
 
-        $ionicConfigProvider.platform.android.scrolling.jsScrolling(false);
+      // $ionicConfigProvider.platform.android.scrolling.jsScrolling(false);
         $ionicConfigProvider.tabs.position('bottom');
         $urlRouterProvider.otherwise('/main/search');
     });

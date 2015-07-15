@@ -8,49 +8,12 @@
         <button class="button button-icon icon ion-ios-compose-outline ink ink-dark" ui-sref="main.profile-edit"></button>
     </ion-nav-buttons>
 
-    <ion-pane style="top:54px;" id="profileSlideBox">
 
-        <ion-slide-box>
-            <ion-slide>
-                <div class="user-img1 padding imgslide">
-                    <img ng-src="{{img1}}" class="profile-avatar">
-                </div>
-            </ion-slide>
 
-            <ion-slide ng-if="img2">
-                <div class="user-img-profile padding imgslide" style="background: url({{img2}}) no-repeat center; background-size: cover">
-
-                </div>
-            </ion-slide>
-            <ion-slide ng-if="img3">
-                <div class="user-img-profile padding imgslide" style="background: url({{img3}}) no-repeat center; background-size: cover">
-
-                </div>
-            </ion-slide>
-
-            <ion-slide ng-if="img4">
-                <div class="user-img-profile padding imgslide" style="background: url({{img4}}) no-repeat center; background-size: cover">
-
-                </div>
-            </ion-slide>
-
-            <ion-slide ng-if="img5">
-                <div class="user-img-profile padding imgslide" style="background: url({{img5}}) no-repeat center; background-size: cover">
-
-                </div>
-            </ion-slide>
-
-            <ion-slide ng-if="img6">
-                <div class="user-img-profile padding imgslide" style="background: url({{img6}}) no-repeat center; background-size: cover">
-                </div>
-            </ion-slide>
-
-        </ion-slide-box>
-    </ion-pane>
-
+    <slider>
     <ion-content id="profile"
                  class="animate-fade-slide-in"
-                 on-scroll="fxscroll()">
+                 on-scroll="sliderCtrl.fxscroll()">
 
         <div class="list">
 
@@ -59,7 +22,7 @@
                 <span ng-show="user.info.age">, {{user.info.age}}</span>
             </div>
 
-            <div ng-show="user.base.description" class="divider item" style="padding-left:10px; padding-right:10px; padding-top:5px; padding-bottom:5px; white-space: normal; word-wrap: normal">
+            <div ng-if="user.base.description" class="divider item" style="padding-left:10px; padding-right:10px; padding-top:5px; padding-bottom:5px; white-space: normal; word-wrap: normal">
                 <small>{{user.base.description }}</small>
             </div>
 
@@ -90,5 +53,7 @@
         </div>
 
     </ion-content>
+
+    </slider>
 
 </ion-view>

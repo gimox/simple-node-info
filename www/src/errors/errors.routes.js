@@ -12,7 +12,8 @@ angular.module('app')
                 url  : '/connection',
                 views: {
                     'errors': {
-                        templateUrl: 'src/errors/tmpl/error.tmpl.html'
+                        templateUrl: 'src/errors/tmpl/error.tmpl.html',
+                        controller: 'ErrorController as errCtrl'
                     }
                 }
             })

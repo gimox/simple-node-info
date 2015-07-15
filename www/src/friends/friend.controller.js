@@ -2,13 +2,11 @@ angular.module('app')
     .controller('FriendController', function ($scope, user, UtilsFactory, friend, SettingsFactory, ImageFactory, $ionicActionSheet, $timeout,$ionicScrollDelegate,$ionicSlideBoxDelegate) {
 
         $scope.friend = friend;
+        $scope.images = [];
+        $scope.images = ImageFactory.getAllImage($scope.friend.image.profile);
 
-        /*
-         $scope.img1 = ImageFactory.getImgProfile($scope.friend.image.profile,'avatar',1);
-         $scope.img2 = ImageFactory.getImgProfile($scope.friend.image.profile,'background_primary');
-         $scope.img3 = ImageFactory.getImgProfile($scope.friend.image.profile,'background_secondary');
-         */
 
+/*
         var typeImg = ImageFactory.getType();
         $scope.img1 = ImageFactory.getImgProfile($scope.friend.image.profile, typeImg[0], 1);
         $scope.img2 = ImageFactory.getImgProfile($scope.friend.image.profile, typeImg[1]);
@@ -16,6 +14,7 @@ angular.module('app')
         $scope.img4 = ImageFactory.getImgProfile($scope.friend.image.profile, typeImg[3]);
         $scope.img5 = ImageFactory.getImgProfile($scope.friend.image.profile, typeImg[4]);
         $scope.img6 = ImageFactory.getImgProfile($scope.friend.image.profile, typeImg[5]);
+        */
 
 
         if ($scope.friend.base && $scope.friend.base.born_date) {
@@ -57,7 +56,7 @@ angular.module('app')
 
         };
 
-
+/*
         $scope.fxscroll = function () {
             $ionicSlideBoxDelegate.update();
 
@@ -96,6 +95,7 @@ angular.module('app')
             el.style['-webkit-filter'] = 'blur(' + blur + 'px)';
 
         }
+        */
 
 
     });

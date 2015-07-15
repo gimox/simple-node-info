@@ -6,75 +6,41 @@
     </ion-nav-buttons>
 
 
-    <ion-pane style="top:33px;" id="profileSearchNearSlidebox">
-        <ion-slide-box>
-            <ion-slide ng-if="img1">
-                <div class="user-img-profile padding imgslideNear"
-                     style="background: url({{img1}}) no-repeat center; background-size: cover">
+    <slider-full>
+
+        <ion-content id="search-profile" class="animate-fade-slide-in profilestyle" on-scroll="sliderFullCtrl.fxscroll()">
+
+            <div class="list">
+
+                <div class="item profile-name item-icon-right">
+                    <span>{{friend.base.avatar_name}}</span>
+                    <span ng-show="age">, {{age}}</span>
                 </div>
-            </ion-slide>
-            <ion-slide ng-if="img2">
-                <div class="user-img-profile padding imgslideNear"
-                     style="background: url({{img2}}) no-repeat center; background-size: cover">
+
+                <div ng-if="friend.base.description" class="divider item" style="padding-left:10px; padding-right:10px; padding-top:5px; padding-bottom:5px;white-space: normal; word-wrap: normal">
+                    <small>{{user.base.description }}</small>
                 </div>
-            </ion-slide>
-            <ion-slide ng-if="img3">
-                <div class="user-img-profile padding imgslideNear"
-                     style="background: url({{img3}}) no-repeat center; background-size: cover">
+
+                <div ng-if="!friend.base.description" class="divider item" style="text-align:center; padding-left:10px; padding-right:10px; padding-top:5px; padding-bottom:5px;white-space: normal; word-wrap: normal">
+                    <!--  Il tuo profilo non ha ancora una descrizione!-->
                 </div>
-            </ion-slide>
-            <ion-slide ng-if="img4">
-                <div class="user-img-profile padding imgslideNear"
-                     style="background: url({{img4}}) no-repeat center; background-size: cover">
+
+                <div class="item item-icon-left app-color divider item">
+                    <i class="icon ion-ios-people app-color"></i>
+                    Amici in comune
+                    <span class="badge" ng-class="friendsColor()">{{friend.base.num_friends}}</span>
                 </div>
-            </ion-slide>
-            <ion-slide ng-if="img5">
-                <div class="user-img-profile padding imgslideNear"
-                     style="background: url({{img5}}) no-repeat center; background-size: cover">
-                </div>
-            </ion-slide>
-            <ion-slide ng-if="img6">
-                <div class="user-img-profile padding imgslideNear"
-                     style="background: url({{img6}}) no-repeat center; background-size: cover">
-                </div>
-            </ion-slide>
-        </ion-slide-box>
-    </ion-pane>
 
-    <ion-content id="search-profile" class="profilestyle" on-scroll="fxscroll()">
-
-        <div class="list">
-
-            <div class="item profile-name item-icon-right">
-                <span>{{friend.base.avatar_name}}</span>
-                <span ng-show="age">, {{age}}</span>
-            </div>
-
-            <div ng-show="friend.base.description" class="divider" style="padding-left:10px; padding-right:10px; padding-top:5px; padding-bottom:5px;">
-                <small>{{user.base.description }}</small>
-            </div>
-
-            <div ng-hide="friend.base.description" class="divider" style="text-align:center; padding-left:10px; padding-right:10px; padding-top:5px; padding-bottom:5px;">
-                <!--  Il tuo profilo non ha ancora una descrizione!-->
-            </div>
-
-            <div class="item item-icon-left app-color divider">
-                <i class="icon ion-ios-people app-color"></i>
-                Amici in comune
-                <span class="badge" ng-class="friendsColor()">{{friend.base.num_friends}}</span>
-            </div>
-
-            <div class="padding" style="background-color: #fff">
+                <div class="padding item" style="background-color: #fff; margin-top:5px; white-space: normal; word-wrap: normal">
             <span ng-repeat="(key,value) in friend.interest">
 
                    <button ng-if="value" class="button button-light button-flat button-interest button-small">
-                       {{key}}
+
                        <i class="icon" ng-class="srcprCtrl.getIncons(key)"></i> {{srcprCtrl.getInterestName(key)}}
                    </button>
             </span>
+                </div>
             </div>
-        </div>
-
-        </ion-slide-box>
-    </ion-content>
+        </ion-content>
+    </slider-full>
 </ion-view>

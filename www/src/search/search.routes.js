@@ -11,6 +11,9 @@ angular.module('app')
                     }
                 }
             })
+
+
+
             .state('main.search-near', {
                 url  : "/search-near",
                // cache: false,

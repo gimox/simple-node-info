@@ -1,8 +1,12 @@
 'use strict';
 angular.module('app')
-    .service('UpdateFactory', function ( $rootScope,$ionicDeploy, $ionicPopup, $timeout, $ionicLoading) {
+    .service('UpdateFactory', function ($rootScope, $ionicDeploy, $ionicPopup, $timeout, $ionicLoading) {
 
         var isUpdate = false;
+          $ionicDeploy.setChannel("production");
+
+
+
 
         function check() {
             console.log('Ionic Deploy: Checking for updates');
@@ -14,6 +18,7 @@ angular.module('app')
             });
         }
 
+
         function updateDialog() {
 
             if (!isUpdate) {
@@ -21,11 +26,12 @@ angular.module('app')
             }
 
 
+
             var confirmPopup = $ionicPopup.confirm({
                 title   : 'Aggiornamento',
                 template: 'Abbiamo migliorato l\'App e abbiamo rilasciato un aggiornamento, lo vuoi fare ora? ',
-                buttons: [
-                    { text: 'No' },
+                buttons : [
+                    {text: 'No'},
                     {
                         text: '<b>SI</b>',
                         type: 'button-positive'
@@ -35,10 +41,13 @@ angular.module('app')
 
 
             confirmPopup.then(function (res) {
+                isUpdate = false;
+
                 if (res) {
-                    isUpdate = false;
+                    console.log('no');
                 } else {
                     update();
+                    console.log('si');
                 }
             });
         }
@@ -54,43 +63,32 @@ angular.module('app')
             });
 
 
-/*
-            $timeout(function(){
-                $ionicLoading.hide();
 
-                var alertPopup = $ionicPopup.alert({
-                    title: 'Fatto!',
-                    template: 'L\'abggiornamento è stato eseguito con successo'
+            $ionicDeploy.update().then(function (res) {
+
+                $ionicLoading.hide();
+                $ionicPopup.alert({
+                    title   : 'Fatto!',
+                    template: 'L\'aggiornamento è stato eseguito con successo'
                 });
                 isUpdate = false;
-            },4000);
-            */
 
-
-
-
-            $ionicDeploy.update().then(function(res) {
+            }, function (err) {
                 $ionicLoading.hide();
-             $ionicPopup.alert({
-             title: 'Fatto!',
-             template: 'L\'abggiornamento è stato eseguito con successo'
-             });
-            isUpdate = false;
+                $ionicPopup.alert({
+                    title   : 'Errore!',
+                    template: 'Non è stato possibile eseguire questo aggiornamento, riprova più tardi'
+                });
+                 isUpdate = false;
 
-            }, function(err) {
-                $ionicLoading.hide();
-             $ionicPopup.alert({
-             title: 'Errore!',
-             template: 'Non è stato possibile eseguire questo aggiornamento, riprova più tardi'
-             });
-             var isUpdate = false;
-
-            }, function(prog) {
-                $rootScope.progress = prog;
+            }, function (prog) {
+                $rootScope.progress = parseInt(prog);
                 console.log('Ionic Deploy: Progress... ', prog);
             });
 
         }
+
+
 
 
         function hasUpdate() {
@@ -98,8 +96,8 @@ angular.module('app')
         }
 
         return {
-            check        : check,
-            update       : update,
+            check       : check,
+            update      : update,
             updateDialog: updateDialog
         }
     });

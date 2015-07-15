@@ -1,9 +1,9 @@
 angular.module('app')
-    .controller('MainController', function (user, $state, storage, $scope,GelolocFactory,ionicMaterialInk, ionicMaterialMotion,$timeout,    $ionicHistory) {
+    .controller('MainController', function (user, $state, storage, $scope,GelolocFactory,ionicMaterialInk,$timeout) {
 
         storage.set('user',user);
 
-        GelolocFactory.start();
+      //  GelolocFactory.start();
 
 
         this.search = function () {
@@ -23,10 +23,10 @@ angular.module('app')
             $state.go('main.search-near', {}, {reload: true,cache:false});
         };
 
-
+/*
         $timeout(function() {
             ionicMaterialInk.displayEffect();
         },500);
-
+*/
 
     });

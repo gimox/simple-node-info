@@ -13,6 +13,7 @@
                 <div ng-click="imageAction( $index,images[$index])">
                     <img  ng-if="images[$index]"
                           ng-src="{{images[$index]}}"
+                          default-src="img/thumb-photo.jpg"
                           width="100%"
                           id="img{{$index}}"/>
                 </div>
@@ -22,6 +23,7 @@
                 <div ng-click="imageAction( $index+1,images[$index+1])">
                     <img ng-if="images[$index+1]"
                          ng-src="{{images[$index+1]}}"
+                         default-src="img/thumb-photo.jpg"
                          width="100%"
                          id="img{{$index+1}}"/>
                 </div>

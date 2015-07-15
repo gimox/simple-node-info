@@ -62,9 +62,9 @@
   }
 
   img {
-    margin-top: 0;
-    width: 220px;
-    height: 220px;
+    margin-top: 20px;
+    width: 210px;
+    height: 210px;
     border-radius: 50%;
     border: 2px solid #ffffff;
     padding: 8px;
@@ -78,15 +78,14 @@
   color: #ffffff;
   height: 285px;
 
-  > div {
-    font-size: 12px;
-    margin-top: 10px;
+  img:not('.user-img1 img') {
+    height: 285px;
   }
 }
 
 @media screen and (min-width: 768px) {
 
-  #profile, #friend {
+  #profile, #friend,#search-profile {
     padding-top: 550px;
   }
   #profileSlideBox, #profileFriendSlidebox,#profileSearchNearSlidebox, .user-img-profile, .user-img1 {

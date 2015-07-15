@@ -6,7 +6,7 @@ angular.module('app')
         }
 
 
-        UpdateFactory.updateDialog();
+       UpdateFactory.updateDialog();
 
 
        // ionicMaterialInk.displayEffect();
