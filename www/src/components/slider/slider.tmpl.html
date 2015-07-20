@@ -1,0 +1,30 @@
+<ion-pane  id="profileSlideBox" ng-style="slideStyle">
+
+
+    <ion-slide-box>
+
+        <ion-slide>
+            <div class="row center user-img1 imgslide" ng-style="imgStyle">
+                <div class="col">
+                    <img ng-src="{{images[0]}}"
+                         default-src="img/thumb-profile.jpg"
+                         class="profile-avatar"
+                         ng-style="avatarStyle">
+                </div>
+            </div>
+        </ion-slide>
+
+        <ion-slide ng-if="$index !=0" ng-repeat="img in images">
+            <div ng-if="$index!=0"
+                 class="user-img-profile imgslide"
+                 style="background:url({{img}}) no-repeat center; background-size: cover"
+                 ng-style="imgStyle">
+            </div>
+        </ion-slide>
+
+
+    </ion-slide-box>
+
+
+</ion-pane>
+<ng-transclude></ng-transclude>

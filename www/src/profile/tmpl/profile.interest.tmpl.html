@@ -1,0 +1,28 @@
+<ion-view view-title="Interessi">
+    <ion-content id="interest" class="animate-fade-slide-in">
+
+        <div class="row row-interest" ng-repeat="item in interests" ng-if="$index % 2 === 0">
+
+            <div class="col col-50"
+                 ng-class="{'interest-selected': prfintCtrl.isSelected(interests[$index].key)}"
+                 ng-if="$index < interests.length"
+                 ng-click="prfintCtrl.updateInterest(interests[$index].key)">
+                <div class="col-interest padding">
+                    <i ng-class="interests[$index].icon" ng-class="{}"></i>
+                </div>
+                <div>{{ interests[$index].name}}</div>
+            </div>
+
+            <div class="col col-50"
+                 ng-class="{'interest-selected': prfintCtrl.isSelected(interests[$index+1].key)}"
+                 ng-if="$index + 1 < interests.length"
+                 ng-click="prfintCtrl.updateInterest(interests[$index+1].key)">
+                <div class="col-interest padding">
+                    <i ng-class="interests[$index+1].icon"></i>
+                </div>
+                <div style="width:100%; text-align:center">{{ interests[$index+1].name}}</div>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>

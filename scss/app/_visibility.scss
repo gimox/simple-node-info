@@ -1,0 +1,18 @@
+#visibility {
+
+  background-color: $background-base;
+  .item {
+    color: $calm;
+  }
+
+  .item.item-divider {
+      color: $dark;
+    }
+
+  .item i {
+    color : $dark;
+  }
+
+
+
+}

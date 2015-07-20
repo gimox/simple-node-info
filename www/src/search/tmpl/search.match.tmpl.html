@@ -1,0 +1,73 @@
+<ion-view view-title="<img src='img/logolight.svg' class='logo-header'>">
+
+
+    <slider-full>
+        <ion-content id="search-match" class="animate-fade-slide-in profilestyle" on-scroll="sliderFullCtrl.fxscroll()">
+            <!-- Loading !-->
+            <div ng-if="loading" style="margin-top:-285px;">
+                <div class="row user-avatar">
+                    <div class="row" id="circle" circle-blink>
+                        <img ng-src="{{avatar}}">
+                    </div>
+                </div>
+                <div class="padding">
+                    <span ng-show="!hasError">Attendi stiamo cercando persone con i tuoi interessi..</span>
+                    <span ng-show="!hasPosition && !hasError""> <br/>Controllo la tua posizione..</span>
+                    <span class="error-message" ng-show="hasError"> <br/>Non è possibile determinare la tua posizione</span>
+                </div>
+            </div>
+            <!-- END loading !-->
+
+            <!-- loading done with no result !-->
+            <div ng-if="!loading && !friend" style="margin-top:-285px;">
+                <div class="row user-avatar">
+                    <div class="row">
+                        <img ng-src="{{avatar}}">
+                    </div>
+                </div>
+                <div class="loadingDone">
+                    <div> Non ci sono persone che matchano con il tuo profilo</div>
+
+                    <button class="button button-raised button-calm ink" style="margin-top:40px" ng-click="mainCtrl.search()">
+                        Esegui una nuova ricerca
+                    </button>
+                </div>
+            </div>
+            <!-- END -->
+
+            <div class="list" ng-show="friend">
+
+                <div class="item profile-name item-icon-right">
+                    <span>{{friend.base.avatar_name}}</span>
+                    <span ng-show="age">, {{age}}</span>
+                </div>
+
+                <div ng-if="friend.base.description" class="divider item" style="padding-left:10px; padding-right:10px; padding-top:5px; padding-bottom:5px;white-space: normal; word-wrap: normal">
+                    <small>{{user.base.description }}</small>
+                </div>
+
+
+                <div style="text-align: center; margin-top:20px;">
+                    <a class="button button-icon icon ion-ios-close-outline" ng-click="SrcMatchCtrl.block(friend.base.id_user)"></a>
+                    <a class="button button-icon icon myicon icon-my-ionicons-drink-outline" ng-click="SrcMatchCtrl.setAskFriend(friend.base.id_user)"></a>
+                </div>
+
+                <!--
+                                <div class="padding item" style="background-color: #fff; margin-top:5px; white-space: normal; word-wrap: normal"">
+                            <span ng-repeat="(key,value) in friend.interest">
+
+                                   <button ng-if="value" class="button button-light button-flat button-interest button-small">
+                                       <i class="icon" ng-class="SrcMatchCtrl.getIncons(key)"></i> {{SrcMatchCtrl.getInterestName(key)}}
+                                   </button>
+                            </span>
+                            </div>
+                            !-->
+            </div>
+
+
+        </ion-content>
+
+    </slider-full>
+
+
+</ion-view>

@@ -1,0 +1,59 @@
+<ion-view view-title="Profilo">
+    <ion-nav-buttons side="primary">
+        <button class="button button-icon  icon ion-ios-gear-outline ink ink-dark" ui-sref="main.settings"></button>
+    </ion-nav-buttons>
+
+    <ion-nav-buttons side="secondary">
+        <button class="button button-icon icon ion-ios-camera-outline ink ink-dark" ui-sref="main.profile-image"></button>
+        <button class="button button-icon icon ion-ios-compose-outline ink ink-dark" ui-sref="main.profile-edit"></button>
+    </ion-nav-buttons>
+
+
+
+    <slider>
+    <ion-content id="profile"
+                 class="animate-fade-slide-in"
+                 on-scroll="sliderCtrl.fxscroll()">
+
+        <div class="list">
+
+            <div class="item profile-name anim">
+                <span>{{user.base.avatar_name}}</span>
+                <span ng-show="user.info.age">, {{user.info.age}}</span>
+            </div>
+
+            <div ng-if="user.base.description" class="divider item" style="padding-left:10px; padding-right:10px; padding-top:5px; padding-bottom:5px; white-space: normal; word-wrap: normal">
+                <small>{{user.base.description }}</small>
+            </div>
+
+            <div ng-if="!user.base.description" class="divider item" style="text-align:center; padding-left:10px; padding-right:10px; padding-top:5px; padding-bottom:5px;">
+                Il tuo profilo non ha ancora una descrizione!
+            </div>
+
+            <div class="item anim item-icon-left app-color divider" ui-sref="main.people">
+                <i class="icon ion-ios-people app-color"></i>
+                Amici
+                <span class="badge" ng-class="friendsColor()">{{user.base.num_friends}}</span>
+            </div>
+
+            <a class="item anim divider item-icon-left item-icon-right app-color" ui-sref="main.profile-interest">
+                <i class="icon ion-ios-star-outline app-color"></i>
+                Interessi
+                <i class="icon ion-ios-arrow-right"></i>
+            </a>
+
+            <div class="padding item" style=" margin-top:5px; white-space: normal; word-wrap: normal">
+            <span ng-repeat="(key,value) in user.interest">
+                   <button ng-if="value" class="button button-light button-flat button-interest button-small">
+                       <i class="icon" ng-class="prfCtrl.getIncons(key)"></i> {{prfCtrl.getInterestName(key)}}
+                   </button>
+            </span>
+            </div>
+
+        </div>
+
+    </ion-content>
+
+    </slider>
+
+</ion-view>

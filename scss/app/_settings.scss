@@ -1,0 +1,23 @@
+#settings {
+
+  background-color: $background-base;
+  .list {
+
+    & a {
+
+      border-bottom: 1px solid $border-list-color;
+      & i {
+        color: $dark;
+      }
+
+      & h2 {
+        color: $dark;
+      }
+
+      & p {
+        color: $calm
+      }
+    }
+  }
+
+}

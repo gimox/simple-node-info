@@ -1,0 +1,54 @@
+#login {
+  background: $background-base url($background_one) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+
+  div.buttons {
+    margin-top:30px;
+  }
+  div.logo {
+
+    > div.col {
+      text-align: center;
+    }
+
+    img {
+      width: 70%;
+      margin-top:20px;
+    }
+  }
+
+  .button-facebook {
+    background: $facebook;
+    color: #FFFFFF;
+    &:hover {
+      color: #FFFFFF
+    }
+  }
+
+
+}
+
+
+
+
+
+
+
+.login-background {
+  background: $calm url($background_one) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+}
+
+
+#loginList {
+  border: none;
+  border-radius: 2px;
+
+   > label {
+    border-bottom: 1px solid #CCC !important;
+  }
+}

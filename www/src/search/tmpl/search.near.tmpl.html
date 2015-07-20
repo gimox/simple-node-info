@@ -1,0 +1,98 @@
+<ion-view view-title="<img src='img/logolight.svg' class='logo-header'>">
+    <ion-content id="search-near"  class="animate-fade-slide-in">
+
+        <!-- Loading !-->
+        <div ng-if="loading">
+            <div class="row user-avatar">
+                <div class="row" id="circle" circle-blink>
+                    <img ng-src="{{avatar}}">
+                </div>
+            </div>
+            <div>
+              <span ng-show="!hasError">Attendi stiamo cercando persone vicino a te..</span>
+                <span ng-show="!hasPosition && !hasError"> <br/>Controllo la tua posizione..</span>
+                <span class="error-message" ng-show="hasError"> <br/>Non è possibile determinare la tua posizione</span>
+            </div>
+        </div>
+        <!-- END loading !-->
+
+        <!-- loading done with no result !-->
+        <div ng-if="!loading && !friends.length">
+            <div class="row user-avatar">
+                <div class="row">
+                    <img ng-src="{{avatar}}">
+                </div>
+            </div>
+            <div class="loadingDone">
+               Non ci sono persone vicino a te.
+
+                <button class="button button-raised button-calm ink" style="margin-top:40px" ng-click="mainCtrl.search()">
+                   Esegui una nuova ricerca
+                </button>
+            </div>
+        </div>
+        <!-- END -->
+
+
+
+        <div ng-show="!loading && friends.length" class="row" ng-repeat="friend in friends" ng-if="$index % 2 === 0">
+
+            <div class="col col-50" ng-if="$index < friends.length">
+                <span class="badge badge-energized">{{friends[$index].matching}}</span>
+
+                <div class="card">
+
+
+                        <ion-item class="wrap">
+                        {{friends[$index].avatar_name}}<span ng-show="SrcNearCtrl.getAge(friends[$index+1].born_date)">, {{SrcNearCtrl.getAge(friends[$index].born_date)}}</span>
+
+                        <h6>Km: {{friends[$index].distance}}</h6>
+                        </ion-item>
+
+
+                    <a class="item item-image" ui-sref="main.search-profile({id:friends[$index].id_user})">
+                        <img ng-src="{{SrcNearCtrl.getImage(friends[$index].im_avatar_img)}}">
+                    </a>
+
+                    <div class="item tabs tabs-secondary tabs-icon-left">
+                        <a ng-if="!friends[$index].checkFriend" class="tab-item stable-bg calm" ng-click="SrcNearCtrl.setAskFriend(friends[$index].id_user)">
+                            <i class="icon icon-my-ionicons-drink-outline"></i>
+                        </a>
+
+                        <a ng-if="friends[$index].checkFriend" class="tab-item stable-bg positive-900">
+                            <i class="icon ion-chatbubbles"  ng-click="SrcNearCtrl.chat(friends[$index].id_user)"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col col-50" ng-if="$index+1 < friends.length">
+                <span class="badge badge-energized">{{friends[$index+1].matching}}</span>
+
+                <div class="card">
+                    <div class="item item-text-wrap">
+                        {{friends[$index+1].avatar_name}}<span ng-show="SrcNearCtrl.getAge(friends[$index+1].born_date)">, {{SrcNearCtrl.getAge(friends[$index+1].born_date)}}</span>
+                        <h6>Km: {{friends[$index].distance}}</h6>
+                    </div>
+                    <div class="item item-image" ui-sref="main.search-profile({id:friends[$index+1].id_user})">
+                        <img class="full-image" ng-src="{{SrcNearCtrl.getImage(friends[$index+1].im_avatar_img)}}">
+                    </div>
+
+                    <div class="item tabs tabs-secondary tabs-icon-left">
+                        <a ng-if="friends[$index+1].checkFriend" class="tab-item stable-bg calm" ng-click="SrcNearCtrl.setAskFriend(friends[$index+1].id_user)">
+                            <i class="icon icon-my-ionicons-drink-outline"></i>
+                        </a>
+                        <a ng-if="!friends[$index+1].checkFriend" class="tab-item stable-bg positive-900"  >
+                            <i class="icon ion-chatbubbles" ng-click="SrcNearCtrl.chat(friends[$index+1].id_user)"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </ion-content>
+</ion-view>

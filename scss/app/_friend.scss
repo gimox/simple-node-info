@@ -1,0 +1,33 @@
+#friend, .friend {
+  background-color: $background-base;
+
+  .ion-record {
+    color: #ffffff !important;
+  }
+  .button-interest {
+    padding: 6px;
+    border-color: $dark;
+    border-style: solid;
+    border-radius: 3px;
+    border-width: 1px !important;
+    color: $dark;
+    font-size: 10px;
+    margin-top: 7px;
+  }
+
+  div, a {
+    color: $dark;
+
+  }
+
+  div .divider, a .divider {
+    border-bottom: 1px solid #E1E1E1;
+  }
+  .profile-name {
+    font-size: 16px;
+    color: $dark;
+    & span:first-child {
+      font-weight: bolder;
+    }
+  }
+}

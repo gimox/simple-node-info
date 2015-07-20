@@ -1,0 +1,94 @@
+
+.slider-pager .slider-pager-page {
+  color:#FFF;
+}
+
+#profile, .profilestyle {
+  background-color: $background-base;
+  padding-top: 285px;
+
+  .ion-record {
+    color: #ffffff !important;
+  }
+  .button-interest {
+    padding: 6px;
+    border-color: $dark;
+    border-style: solid;
+    border-radius: 3px;
+    border-width: 1px !important;
+    color: $dark;
+    font-size: 10px;
+    margin-top: 7px;
+  }
+
+  div, a {
+    color: $dark;
+
+  }
+
+  div .divider, a .divider {
+    border-bottom: 1px solid #E1E1E1;
+  }
+  .profile-name {
+    font-size: 16px;
+    color: $dark;
+    & span:first-child {
+      font-weight: bolder;
+    }
+  }
+  /*
+    .list {
+      div, a {
+        border-bottom:1px solid #CCC;
+      }
+    }
+    */
+}
+
+.user-img1 {
+  background: $calm url($background_one) center;
+  background-size: auto;
+  height: 285px;
+
+  > div {
+    font-size: 22px;
+  }
+
+  img {
+   // margin-top: 20px;
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    padding: 8px;
+  }
+
+}
+
+.user-img-profile, #profileSlideBox, #profileFriendSlidebox,#profileSearchNearSlidebox {
+  background-color: $calm;
+  text-align: center;
+  color: #ffffff;
+  height: 285px;
+
+  img:not('.user-img1 img') {
+    height: 285px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+
+  #profile, #friend,#search-profile {
+    padding-top: 550px;
+  }
+  #profileSlideBox, #profileFriendSlidebox,#profileSearchNearSlidebox, .user-img-profile, .user-img1 {
+    height: 550px;
+  }
+
+  .user-img1 {
+    img {
+      width: 400px;
+      height: 400px;
+    }
+  }
+}
