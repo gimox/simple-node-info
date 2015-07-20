@@ -1,5 +1,5 @@
 angular.module('app')
-    .controller('SearchProfileController', function ($scope,user,UtilsFactory,friend,SettingsFactory,ImageFactory,$ionicActionSheet, $timeout) {
+    .controller('SearchProfileController', function ($scope,ChatFactory,$state, user, UtilsFactory, friend, SettingsFactory, ImageFactory, $ionicActionSheet, $timeout, FriendsFactory) {
 
         $scope.friend = friend;
         $scope.images = [];
@@ -17,12 +17,21 @@ angular.module('app')
             return SettingsFactory.getInterestName(key);
         };
 
-        this.hideFriend = function(id) {
+        this.hideFriend = function (id) {
             alert(id);
         };
 
-        this.setFriend = function(id) {
-            alert(id);
+        this.setAskFriend = function(id) {
+            FriendsFactory.getAskFriend(id).then(function(success) {
+                $state.go('main.search-near');
+            },function(err){
+
+            });
         };
+
+        this.chat = function (id) {
+            ChatFactory.friend(id);
+        }
+
 
     });

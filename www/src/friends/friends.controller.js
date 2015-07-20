@@ -1,7 +1,8 @@
 angular.module('app')
-    .controller('FriendsController', function ($scope,friends,user,UtilsFactory,ionicMaterialInk,ionicMaterialMotion,$timeout,$ionicLoading) {
+    .controller('FriendsController', function ($scope,friends,user,UtilsFactory,ionicMaterialInk,ionicMaterialMotion,$timeout,$ionicLoading,FriendsFactory) {
 
         $scope.friends = friends;
+        $scope.numAskFriends = 0;
 
         this.getAge = function(bd) {
             return UtilsFactory.age(bd);
@@ -29,9 +30,6 @@ angular.module('app')
         },200);
 
 
-
-
-
         $scope.$on('stateChangeStart',function(){
             $ionicLoading.show({
                 templateUrl: 'src/friends/tmpl/loading.friends.tmpl.html'
@@ -41,5 +39,25 @@ angular.module('app')
         $scope.$on('stateChangeSuccess',function(){
             $ionicLoading.hide();
         });
+
+
+
+        function getAskCount() {
+            FriendsFactory.getAsk(1)
+                .then(function (response) {
+
+                    if(response.data.hasOwnProperty('count')) {
+
+                        $scope.numAskFriends = response.data.count
+                    }
+                },
+                function (err) {
+                   console.log(err);
+                });
+        }
+
+
+        getAskCount();
+
 
     });

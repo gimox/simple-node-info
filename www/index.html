@@ -24,6 +24,7 @@
 
     <script src="lib/gsap/src/minified/TweenMax.min.js"></script>
     <script src="lib/gsap/src/minified/TimelineMax.min.js"></script>
+    <script src="lib/socket.io-client/socket.io.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
   <!--  <script src="cordova.js"></script> !-->
@@ -90,17 +91,23 @@
     <script src="src/friends/friends.controller.js"></script>
     <script src="src/friends/friends.factory.js"></script>
     <script src="src/friends/friend.controller.js"></script>
+    <script src="src/friends/ask.friends.controller.js"></script>
+    <script src="src/friends/ask.friend.controller.js"></script>
 
     <!-- chat !-->
     <script src="src/chat/chat.routes.js"></script>
+    <script src="src/chat/chat.factory.js"></script>
 
 
     <!-- events !-->
-    <script src="src/events/events.routes.js"></script>
+   <script src="src/events/events.routes.js"></script>
 
     <!-- errors !-->
     <script src="src/errors/errors.routes.js"></script>
+    <script src="src/chat/socket.factory.js"></script>
     <script src="src/errors/error.controller.js"></script>
+
+
 
 </head>
 <body ng-app="app">

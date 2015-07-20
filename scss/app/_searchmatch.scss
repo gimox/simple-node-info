@@ -4,6 +4,23 @@
   -moz-background-size: cover;
   background-size: cover;
 
+  .icon:before {
+    font-size:100px;
+    box-shadow: none;
+    color: $assertive
+  }
+
+  .button-icon {
+    box-shadow: none;
+    padding-top:20px;
+    padding-bottom:10px;
+    height: 85px;
+  }
+
+  .myicon:before {
+    font-size:94px;
+    color: $calm
+  }
 
   .user-avatar {
     text-align: center;

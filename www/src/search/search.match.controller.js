@@ -1,26 +1,24 @@
 angular.module('app')
-    .controller('SearchMatchController', function (user,$state, $scope,$rootScope, storage, ImageFactory, GelolocFactory, SearchFactory, $timeout, ionicMaterialInk, ionicMaterialMotion, UtilsFactory,$ionicLoading,$ionicSlideBoxDelegate) {
-
+    .controller('SearchMatchController', function (user,$state,SettingsFactory,FriendsFactory,GelolocFactory,ImageFactory, $scope,$rootScope, storage, SearchFactory, $timeout, ionicMaterialInk, ionicMaterialMotion, UtilsFactory,$ionicLoading,$ionicSlideBoxDelegate) {
         $scope.user = storage.get('user');
         $scope.avatar = ImageFactory.getAvatarImage();
-        $scope.location = GelolocFactory.get();
-        $scope.friends = [];
+        $scope.friends = false;
         $scope.hasPosition = false;
         $scope.loading = true;
         $scope.hasError = false;
+        $scope.images = false;
 
 
-        if ($scope.location.length) {
+
+        GelolocFactory.getPosition('main.search').then(function (success) {
+            $scope.hasError = false;
             $scope.hasPosition = true;
             loadData();
-        }
 
-        $scope.$on('position', function (ev, data) {
-            $scope.location = data;
-            $scope.hasPosition = true;
-            loadData();
-            $scope.loaded = true;
+        }, function (err) {
+            $scope.hasError = true;
         });
+
 
         var params = {
             'type' : 1,
@@ -29,47 +27,71 @@ angular.module('app')
             'page' : null
         };
 
-        //TODO remove in production
-        /*
-        $timeout(function(){
-            if(!$scope.loaded) {
-                loadData();
-            }
-        },2000);
-        */
-        loadData();
+
+
 
         function loadData() {
             SearchFactory.get(params)
                 .then(function (response) {
-                    $scope.loading = false;
-                    $scope.friends = response.data.friend;
 
-                    $ionicSlideBoxDelegate.update();
 
-                    // animation material design
-                    $timeout(function () {
 
-                        ionicMaterialInk.displayEffect();
+                    FriendsFactory.getFriendDetail(response.data.friend[0].id_user)
+                        .then(function (response) {
+                            $scope.friend = response.data.friend;
+                            $scope.image = [];
+                            $scope.images = ImageFactory.getAllImage($scope.friend.image.profile);
 
-                        if($scope.friends.length) {
-                            ionicMaterialMotion.pushDown({
-                                selector: '.push-down'
-                            });
-                            ionicMaterialMotion.fadeSlideInRight({
-                                selector: '.animate-fade-slide-in .item'
-                            });
-                        }
+                            console.log($scope.friend);
+                            if ($scope.friend.base && $scope.friend.base.born_date) {
+                                $scope.age = UtilsFactory.age($scope.friend.base.born_date);
+                            }
 
-                    }, 200);
+                            $timeout(function () {
+                                ionicMaterialInk.displayEffect();
+
+                                if($scope.friends) {
+                                    ionicMaterialMotion.pushDown({
+                                        selector: '.push-down'
+                                    });
+                                    ionicMaterialMotion.fadeSlideInRight({
+                                        selector: '.animate-fade-slide-in .item'
+                                    });
+                                }
+
+                            }, 50);
+                            $scope.loading = false;
+
+
+                        },function(error){
+                            $scope.loading = false;
+                        });
+
+
+
+
+
+
+
 
                 },
                 function (err) {
-                    $scope.isLoading = false;
+                    $scope.loading = false;
                     $scope.hasError = true;
                 });
         }
 
+
+
+
+
+        this.getIncons = function (name) {
+            return SettingsFactory.getInterestIcon(name);
+        };
+
+        this.getInterestName = function (key) {
+            return SettingsFactory.getInterestName(key);
+        };
 
         this.getImage = function(img){
             return  ImageFactory.getImg(img);
@@ -85,6 +107,29 @@ angular.module('app')
 
         $scope.age = function(born_date){
            return  UtilsFactory.age(born_date);
-        }
+        };
+
+        this.setAskFriend = function(id) {
+            FriendsFactory.getAskFriend(id).then(function(success) {
+                $state.go('main.search-match', {},{'reload':true});
+            },function(err){
+
+            });
+        };
+
+        this.block = function(id) {
+            FriendsFactory.blockFriend(id).then(function(success) {
+                $state.go('main.search-match', {},{'reload':true});
+            },function(err){
+
+            });
+        };
+
+
+
+
+
+
+
 
     });

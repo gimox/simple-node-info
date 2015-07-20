@@ -1,9 +1,9 @@
 angular.module('app')
-    .controller('MainController', function (user, $state, storage, $scope,GelolocFactory,ionicMaterialInk,$timeout) {
+    .controller('MainController', function (user, $state, storage, $scope,GelolocFactory,ionicMaterialInk,$timeout,socket) {
 
         storage.set('user',user);
 
-      //  GelolocFactory.start();
+        GelolocFactory.start();
 
 
         this.search = function () {

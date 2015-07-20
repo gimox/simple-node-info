@@ -7,6 +7,7 @@ angular.module('app')
             var deferred = $q.defer();
             var token = store.get('qoojoin.auth-token');
 
+
             if (storage.get('user')) {
                 deferred.resolve(storage.get('user'));
 
@@ -19,12 +20,12 @@ angular.module('app')
                             deferred.resolve(response.data.user);
                         } else {
                             //  deferred.reject(err);
-                            deferred.resolve({error: 2, message: err});
+                            deferred.resolve({error: 2, message: 'error connection to db'});
                         }
                     })
-
                     .catch(function (err) {
-                        deferred.resolve({error: 1, message: err});
+                        console.log('***********************error', err);
+                        deferred.resolve({error: 1, message: 'error reading full profile'});
                         // deferred.reject({error:1,message:err});
                     });
             }

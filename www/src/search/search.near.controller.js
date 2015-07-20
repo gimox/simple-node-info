@@ -1,26 +1,28 @@
 angular.module('app')
-    .controller('SearchNearController', function (user,$state, $scope,$rootScope, storage, ImageFactory, GelolocFactory, SearchFactory, $timeout, ionicMaterialInk, ionicMaterialMotion, UtilsFactory,$ionicLoading) {
+    .controller('SearchNearController', function (user, ChatFactory, $state, FriendsFactory, $ionicPopup, $ionicLoading, $scope, $rootScope, storage, ImageFactory, GelolocFactory, SearchFactory, $timeout, ionicMaterialInk, ionicMaterialMotion, UtilsFactory) {
+
 
         $scope.user = storage.get('user');
         $scope.avatar = ImageFactory.getAvatarImage();
-        $scope.location = GelolocFactory.get();
         $scope.friends = [];
         $scope.hasPosition = false;
         $scope.loading = true;
         $scope.hasError = false;
 
 
-        if ($scope.location.length) {
-            $scope.hasPosition = true;
-            loadData();
-        }
+        GelolocFactory.getPosition('main.search').then(function (success) {
 
-        $scope.$on('position', function (ev, data) {
-            $scope.location = data;
+            $scope.hasError = false;
             $scope.hasPosition = true;
+            console.log('GPS SUCCESS:', success);
             loadData();
-            $scope.loaded = true;
+
+        }, function (err) {
+
+            $scope.hasError = true;
+            console.log('GPS ERROR:', err);
         });
+
 
         var params = {
             'type' : 2,
@@ -28,16 +30,6 @@ angular.module('app')
             'limit': null,
             'page' : null
         };
-
-        //TODO remove in production
-
-        $timeout(function(){
-            if(!$scope.loaded) {
-                loadData();
-            }
-        },5000);
-
-
 
         function loadData() {
             SearchFactory.get(params)
@@ -52,7 +44,7 @@ angular.module('app')
                         ionicMaterialInk.displayEffect();
 
 
-                        if($scope.friends.length) {
+                        if ($scope.friends.length) {
                             ionicMaterialMotion.pushDown({
                                 selector: '.push-down'
                             });
@@ -81,19 +73,28 @@ angular.module('app')
         };
 
 
-
-        $scope.$on('stateChangeStart',function(){
+        $scope.$on('stateChangeStart', function () {
             $ionicLoading.show({
                 templateUrl: 'src/search/tmpl/loading.search.tmpl.html'
             });
         });
 
-        $scope.$on('stateChangeSuccess',function(){
+        $scope.$on('stateChangeSuccess', function () {
             $ionicLoading.hide();
         });
 
 
+        this.setAskFriend = function (id) {
+            FriendsFactory.getAskFriend(id).then(function (success) {
+                $state.go('main.search-near', {}, {reload: true});
+            }, function (err) {
 
+            });
+        };
+
+        this.chat = function (id) {
+            ChatFactory.friend(id);
+        }
 
 
     });

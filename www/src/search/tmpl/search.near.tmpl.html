@@ -9,9 +9,9 @@
                 </div>
             </div>
             <div>
-                Attendi stiamo cercando persone vicino a te..
-                <span ng-show="!hasPosition"> <br/>Controllo la tua posizione..</span>
-                <span class="error-message" ng-show="hasError"> <br/>Si è verificato un error riprova più tardi</span>
+              <span ng-show="!hasError">Attendi stiamo cercando persone vicino a te..</span>
+                <span ng-show="!hasPosition && !hasError"> <br/>Controllo la tua posizione..</span>
+                <span class="error-message" ng-show="hasError"> <br/>Non è possibile determinare la tua posizione</span>
             </div>
         </div>
         <!-- END loading !-->
@@ -34,6 +34,7 @@
         <!-- END -->
 
 
+
         <div ng-show="!loading && friends.length" class="row" ng-repeat="friend in friends" ng-if="$index % 2 === 0">
 
             <div class="col col-50" ng-if="$index < friends.length">
@@ -54,12 +55,12 @@
                     </a>
 
                     <div class="item tabs tabs-secondary tabs-icon-left">
-                        <a ng-if="!friends[$index].checkFriend" class="tab-item stable-bg assertive">
-                            <i class="icon ion-heart"></i>
+                        <a ng-if="!friends[$index].checkFriend" class="tab-item stable-bg calm" ng-click="SrcNearCtrl.setAskFriend(friends[$index].id_user)">
+                            <i class="icon icon-my-ionicons-drink-outline"></i>
                         </a>
 
                         <a ng-if="friends[$index].checkFriend" class="tab-item stable-bg positive-900">
-                            <i class="icon ion-chatbubbles"></i>
+                            <i class="icon ion-chatbubbles"  ng-click="SrcNearCtrl.chat(friends[$index].id_user)"></i>
                         </a>
                     </div>
                 </div>
@@ -78,11 +79,11 @@
                     </div>
 
                     <div class="item tabs tabs-secondary tabs-icon-left">
-                        <a ng-if="friends[$index+1].checkFriend" class="tab-item stable-bg assertive">
-                            <i class="icon ion-heart"></i>
+                        <a ng-if="friends[$index+1].checkFriend" class="tab-item stable-bg calm" ng-click="SrcNearCtrl.setAskFriend(friends[$index+1].id_user)">
+                            <i class="icon icon-my-ionicons-drink-outline"></i>
                         </a>
-                        <a ng-if="!friends[$index+1].checkFriend" class="tab-item stable-bg positive-900">
-                            <i class="icon ion-chatbubbles"></i>
+                        <a ng-if="!friends[$index+1].checkFriend" class="tab-item stable-bg positive-900"  >
+                            <i class="icon ion-chatbubbles" ng-click="SrcNearCtrl.chat(friends[$index+1].id_user)"></i>
                         </a>
                     </div>
 

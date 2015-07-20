@@ -1,9 +1,3 @@
-.user-card {
-  background-color: $calm;
-  text-align: center;
-  color: #ffffff;
-  height: 285px;
-}
 
 .slider-pager .slider-pager-page {
   color:#FFF;
@@ -52,17 +46,16 @@
 }
 
 .user-img1 {
-  @extend .user-card;
   background: $calm url($background_one) center;
   background-size: auto;
+  height: 285px;
 
   > div {
     font-size: 22px;
-    margin-top: 10px;
   }
 
   img {
-    margin-top: 20px;
+   // margin-top: 20px;
     width: 210px;
     height: 210px;
     border-radius: 50%;

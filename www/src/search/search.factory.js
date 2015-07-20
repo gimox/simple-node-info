@@ -1,12 +1,15 @@
 'use strict';
 angular.module('app')
-    .factory('SearchFactory', function ($http, API_URL,storage) {
+    .factory('SearchFactory', function ($http, API_URL, storage, GelolocFactory) {
+
 
         function get(params) {
             var user = storage.get('user');
 
-            var obj = angular.extend({}, {user:user}, params);
+            var pos= GelolocFactory.get();
+            user.position = pos;
 
+            var obj = angular.extend({}, {user: user}, params);
 
             return $http.post(API_URL + '/matching/getMatchFriends', obj)
                 .then(function success(response) {
@@ -18,7 +21,7 @@ angular.module('app')
 
 
         return {
-            get:get
+            get: get
         }
 
     });

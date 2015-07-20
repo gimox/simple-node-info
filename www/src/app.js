@@ -9,8 +9,9 @@ angular.module('app', [
 ])
 
 
-    .constant('API_URL', 'http://api.quoozy.com:8080/api')
-    //.constant("API_URL", 'http://localhost:8080/api')
+    // .constant('API_URL', 'http://api.quoozy.com:8080/api')
+    .constant("API_URL", 'http://localhost:8080/api')
+    .constant("CHAT_URL", 'http://localhost:8080')
     //  .constant('API_URL', '192.168.200.105:8080/api')
     .run(function ($ionicPlatform, $rootScope, $cordovaStatusbar, $cordovaAppVersion, $cordovaDevice, UpdateFactory) {
 
@@ -66,12 +67,14 @@ angular.module('app', [
                     console.log(e);
                 }
             }
-
-          //  UpdateFactory.check();
+            if (ionic.Platform.isIOS()) {
+                //   UpdateFactory.check();
+            }
 
         });
 
     })
+
 
     .config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider, $ionicAppProvider) {
 
@@ -86,8 +89,8 @@ angular.module('app', [
             //gcm_id: 'YOUR_GCM_ID'
         });
 
-
-      // $ionicConfigProvider.platform.android.scrolling.jsScrolling(false);
+        $ionicConfigProvider.views.swipeBackEnabled(false);
+        // $ionicConfigProvider.platform.android.scrolling.jsScrolling(false);
         $ionicConfigProvider.tabs.position('bottom');
         $urlRouterProvider.otherwise('/main/search');
     });

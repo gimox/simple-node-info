@@ -9875,11 +9875,25 @@ a {
 
 }
 */
-.user-card, .user-img1 {
-  background-color: #00ACC1;
+.bar-header .badge {
+  height: 60%; }
+
+.nodata {
+  text-align: center; }
+  .nodata h5 {
+    color: #607D8B; }
+  .nodata .icon:before {
+    font-size: 90px;
+    margin-top: 30px;
+    color: #607D8B; }
+
+.defaultBackground {
+  background: #fcfcfc url("../img/qoojoinciny.png") no-repeat center center fixed !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
   text-align: center;
-  color: #ffffff;
-  height: 285px; }
+  color: #00ACC1; }
 
 .slider-pager .slider-pager-page {
   color: #FFF; }
@@ -9917,12 +9931,11 @@ a {
 
 .user-img1 {
   background: #00ACC1 url("../img/qoojoinciny.png") center;
-  background-size: auto; }
+  background-size: auto;
+  height: 285px; }
   .user-img1 > div {
-    font-size: 22px;
-    margin-top: 10px; }
+    font-size: 22px; }
   .user-img1 img {
-    margin-top: 20px;
     width: 210px;
     height: 210px;
     border-radius: 50%;
@@ -10076,11 +10089,11 @@ a {
     #friends .list a i {
       color: #607D8B; }
 
-#friend {
+#friend, .friend {
   background-color: #fcfcfc; }
-  #friend .ion-record {
+  #friend .ion-record, .friend .ion-record {
     color: #ffffff !important; }
-  #friend .button-interest {
+  #friend .button-interest, .friend .button-interest {
     padding: 6px;
     border-color: #607D8B;
     border-style: solid;
@@ -10089,14 +10102,14 @@ a {
     color: #607D8B;
     font-size: 10px;
     margin-top: 7px; }
-  #friend div, #friend a {
+  #friend div, #friend a, .friend div, .friend a {
     color: #607D8B; }
-  #friend div .divider, #friend a .divider {
+  #friend div .divider, #friend a .divider, .friend div .divider, .friend a .divider {
     border-bottom: 1px solid #E1E1E1; }
-  #friend .profile-name {
+  #friend .profile-name, .friend .profile-name {
     font-size: 16px;
     color: #607D8B; }
-    #friend .profile-name span:first-child {
+    #friend .profile-name span:first-child, .friend .profile-name span:first-child {
       font-weight: bolder; }
 
 .action-sheet-option, .action-sheet-destructive {
@@ -10156,6 +10169,18 @@ a {
   -moz-background-size: cover;
   background-size: cover;
   background-color: #fcfcfc; }
+  #search-match .icon:before {
+    font-size: 100px;
+    box-shadow: none;
+    color: #ef473a; }
+  #search-match .button-icon {
+    box-shadow: none;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    height: 85px; }
+  #search-match .myicon:before {
+    font-size: 94px;
+    color: #00ACC1; }
   #search-match .user-avatar {
     text-align: center;
     width: 100%;
@@ -10287,3 +10312,51 @@ a {
   #error div.logo img {
     width: 50%;
     margin-top: 20px; }
+
+#askfriend, .askfriend {
+  background: #fcfcfc url("../img/qoojoinciny.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover; }
+  #askfriend .ion-record, .askfriend .ion-record {
+    color: #ffffff !important; }
+  #askfriend .button-interest, .askfriend .button-interest {
+    border-color: #607D8B;
+    border-style: solid;
+    border-radius: 3px;
+    border-width: 1px !important;
+    color: #607D8B;
+    font-size: 10px;
+    margin-top: 7px; }
+  #askfriend .icon:before, .askfriend .icon:before {
+    font-size: 100px;
+    box-shadow: none;
+    color: #ef473a; }
+  #askfriend .button-icon, .askfriend .button-icon {
+    box-shadow: none;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    height: 85px; }
+  #askfriend .myicon:before, .askfriend .myicon:before {
+    font-size: 94px;
+    color: #00ACC1; }
+  #askfriend div, #askfriend a, .askfriend div, .askfriend a {
+    color: #607D8B; }
+  #askfriend div .divider, #askfriend a .divider, .askfriend div .divider, .askfriend a .divider {
+    border-bottom: 1px solid #E1E1E1; }
+  #askfriend .profile-name, .askfriend .profile-name {
+    font-size: 20px;
+    color: #607D8B;
+    background-color: #fcfcfc; }
+    #askfriend .profile-name span:first-child, .askfriend .profile-name span:first-child {
+      font-weight: bolder; }
+
+#chat {
+  background: #fcfcfc url("../img/qoojoinciny.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  text-align: center;
+  color: #00ACC1; }
+  #chat h4 {
+    color: #607D8B; }

@@ -12,11 +12,9 @@ angular.module('app')
                 }
             })
 
-
-
             .state('main.search-near', {
                 url  : "/search-near",
-               // cache: false,
+                cache: false,
                 views: {
                     'search-tab': {
                         templateUrl: "src/search/tmpl/search.near.tmpl.html",
@@ -27,7 +25,7 @@ angular.module('app')
 
             .state('main.search-match', {
                 url  : "/search-match",
-                // cache: false,
+                 cache: false,
                 views: {
                     'search-tab': {
                         templateUrl: "src/search/tmpl/search.match.tmpl.html",

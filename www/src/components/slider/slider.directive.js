@@ -1,4 +1,4 @@
-'use strict';
+
 angular.module('app')
     .directive('slider', function () {
 
@@ -11,6 +11,15 @@ angular.module('app')
                 $scope.slideStyle = {};
                 $scope.avatarStyle = {};
                 $scope.imgStyle = {};
+
+
+                if (ionic.Platform.isIOS()) {
+                    $scope.slideStyle.top = '64px';
+                }else {
+                    $scope.slideStyle.top = '44px';
+                }
+
+
 
 
                 $timeout(function () {
@@ -60,13 +69,10 @@ angular.module('app')
                         blur = 2;
                     }
 
-                    $scope.imgStyle = {
-                        'height': slideHeight + 'px'
-                    };
+                    $scope.imgStyle.height =  slideHeight + 'px';
 
-                    $scope.slideStyle = {
-                        height: slideHeight + 'px'
-                    };
+                    $scope.slideStyle.height =  slideHeight + 'px';
+
 
                     if (ionic.Platform.isIOS()) $scope.slideStyle['-webkit-filter'] = 'blur(' + blur + 'px)';
 
@@ -90,6 +96,12 @@ angular.module('app')
                 $scope.slideStyle = {};
                 $scope.imgStyle = {};
 
+
+                if (ionic.Platform.isIOS()) {
+                    $scope.slideStyle.top = '64px';
+                }else {
+                    $scope.slideStyle.top = '44px';
+                }
 
                 $timeout(function () {
                     ionicMaterialMotion.fadeSlideInRight({
@@ -117,26 +129,17 @@ angular.module('app')
                     var slideHeight = (height + (positionScroll * -1));
                     slideHeight = (slideHeight < 1) ? 1 : slideHeight;
 
-                    if (positionScroll > 80) {
-                        blur = 0.5;
-                    }
-
-                    if (positionScroll > 100) {
-                        blur = 1;
-                    }
-
                     if (positionScroll > 120) {
                         blur = 2;
                     }
 
-                    $scope.imgStyle = {
-                        'height': slideHeight + 'px'
-                    };
 
-                    $scope.slideStyle = {
-                        'height': slideHeight + 'px'
 
-                    };
+                    $scope.imgStyle.height =  slideHeight + 'px';
+
+
+
+                    $scope.slideStyle.height =  slideHeight + 'px';
 
                     if (ionic.Platform.isIOS()) $scope.slideStyle['-webkit-filter'] = 'blur(' + blur + 'px)';
 

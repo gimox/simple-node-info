@@ -44,10 +44,11 @@ angular.module('app')
                 isUpdate = false;
 
                 if (res) {
-                    console.log('no');
-                } else {
                     update();
-                    console.log('si');
+                    console.log('no agg test test');
+                } else {
+
+                    console.log('si agg');
                 }
             });
         }
@@ -56,7 +57,6 @@ angular.module('app')
             console.log('update lanciato');
 
             $rootScope.progress = 0;
-
 
             $ionicLoading.show({
                 template: 'aggiorno l\'app..  {{$root.progress}}%'

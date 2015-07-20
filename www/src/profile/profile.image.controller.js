@@ -112,6 +112,16 @@ angular.module('app')
         function camera(index,cameraType) {
 
             console.log('into camera');
+
+            var CameraPopoverOptions = {
+                x : 0,
+                y :  32,
+                width : 320,
+                height : 480,
+                arrowDir : Camera.PopoverArrowDirection.ARROW_ANY
+            };
+
+
             var options = {
                 quality         : 50,
                 destinationType : Camera.DestinationType.FILE_URI,
@@ -120,9 +130,13 @@ angular.module('app')
                 encodingType    : Camera.EncodingType.JPEG,
                 targetWidth     : 768,
                 targetHeight    : 768,
-                // popoverOptions: CameraPopoverOptions,
+                 popoverOptions: CameraPopoverOptions,
                 saveToPhotoAlbum: false
             };
+
+
+
+
 
             if(cameraType===1) {
                 options.sourceType = Camera.PictureSourceType.CAMERA;
@@ -174,6 +188,10 @@ angular.module('app')
 
             }, function (err) {
                 $ionicLoading.hide();
+                setTimeout(function() {
+                    alert('si è verificato un errore');
+                }, 0);
+                console.log(err);
             });
 
         }

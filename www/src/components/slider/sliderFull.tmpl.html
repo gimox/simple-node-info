@@ -1,8 +1,8 @@
-<ion-pane style="top:44px;" id="profileSlideBox" ng-style="slideStyle">
+<ion-pane ng-if="images"  id="profileSlideBox" ng-style="slideStyle">
     <ion-slide-box>
         <ion-slide ng-repeat="img in images" >
             <div
-                 class="user-img-profile padding imgslide"
+                 class="user-img-profile imgslide"
                  style="background:url({{img}}) no-repeat center; background-size: cover"
                  ng-style="imgStyle">
             </div>

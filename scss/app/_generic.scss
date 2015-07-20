@@ -83,3 +83,35 @@
 
 }
 */
+
+
+.bar-header {
+
+  .badge {
+    height: 60%;
+  }
+}
+
+
+
+.nodata {
+text-align:center ;
+  h5 {
+    color: $dark;
+  }
+
+  .icon:before {
+    font-size:90px;
+    margin-top: 30px;
+    color: $dark;
+  }
+}
+
+.defaultBackground {
+  background: $background-base url($background_one) no-repeat center center fixed !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  text-align: center;
+  color: $calm;
+}
