@@ -1,21 +1,67 @@
 {
   "name": "simple-node-info",
   "description": "Info tool for nodejs",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "Giorgio Modoni <modogio@gmail.com>",
   "main": "./lib/main",
+  "scripts": {
+    "test:nocoverage": "mocha",
+    "test": "nyc $(npm bin)/mocha --reporter spec",
+    "test:coverage:report": "nyc report"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/gimox/node-info"
   },
   "dependencies": {},
   "devDependencies": {
-    "express": "*"
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1",
+    "nyc": "^11.3.0",
+    "pre-push": "^0.1.1"
   },
   "keywords": [
     "info",
     "stat"
   ],
+  "engine": {
+    "node": "> 6"
+  },
   "license": "MIT",
-  "bugs": "https://github.com/gimox/node-info/issues"
+  "bugs": "https://github.com/gimox/node-info/issues",
+  "nyc": {
+    "lines": 90,
+    "statements": 90,
+    "functions": 90,
+    "branches": 90,
+    "extension": [
+      ".js"
+    ],
+    "exclude": [
+      "node_modules",
+      "test"
+    ],
+    "check-coverage": true,
+    "watermarks": {
+      "lines": [
+        80,
+        95
+      ],
+      "functions": [
+        80,
+        95
+      ],
+      "branches": [
+        80,
+        95
+      ],
+      "statements": [
+        80,
+        95
+      ]
+    }
+  },
+  "pre-push": [
+    "test"
+  ]
 }
