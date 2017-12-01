@@ -10,19 +10,13 @@ Get stat value in string format, except getStat() that return json.
 
 ```javascript
 
-var express = require('express')
-    , app = express()
-    , info = require('node-info');
 
-
-   allStat = info.getStat(); //get all data
-
-   pid =  info.getPid(); // get pid process
+const info = require('node-info');
+const allStat = info.getStat(); //get all data
+const pid =  info.getPid(); // get pid process
 
     console.log(pid);
     console.log(allStat);
-
-module.exports = app;
 
 ```
 
